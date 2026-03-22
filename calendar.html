@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calendar — She Goes Outside</title>
+  <meta name="description" content="Browse upcoming She Goes Outside events by date. Find your next outdoor adventure in the Pacific Northwest."/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a class="nav-logo" href="index.html">
+    <svg viewBox="0 0 42 42" width="38" height="38" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="21" cy="21" r="20" fill="#FEF3EA"/>
+      <circle cx="21" cy="21" r="20" fill="none" stroke="#2A7264" stroke-width="2"/>
+      <path d="M5 30 L10 22 L14 25 L18 18 L21 22 L25 17 L29 20 L33 18 L37 22 L37 38 L5 38Z" fill="#3D9181"/>
+      <path d="M5 34 Q12 30 21 32 Q30 34 37 30 L37 38 L5 38Z" fill="#56A898"/>
+      <path d="M21 38 Q20 32 21 27 Q22 22 20 17" stroke="#F4B896" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+      <circle cx="20" cy="12" r="3.5" fill="#BF5220"/>
+      <path d="M20 15.5 L19.5 20" stroke="#BF5220" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M20 17 Q17 15 14 12" stroke="#BF5220" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <path d="M20 17 Q23 15 26 12" stroke="#BF5220" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </svg>
+    <div class="nav-logo-text"><span class="she">She</span><span class="rest"> Goes Outside</span></div>
+  </a>
+  <button class="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="calendar.html" class="active">Calendar</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="events.html" class="btn nav-cta">Get Out There!</a></li>
+  </ul>
+</nav>
+
+<div class="page-body">
+
+  <div class="page-hero">
+    <div class="section-eyebrow">Plan Your Adventure</div>
+    <h1 class="section-title" style="margin-bottom:16px;">Event <em>Calendar</em></h1>
+    <p>Browse upcoming events by date and find the perfect outdoor adventure for you.</p>
+  </div>
+
+  <div class="calendar-wrap">
+    <div class="cal-header">
+      <h3 id="cal-month-label">April 2026</h3>
+      <div class="cal-nav">
+        <button id="cal-prev" aria-label="Previous month">&#8249;</button>
+        <button id="cal-next" aria-label="Next month">&#8250;</button>
+      </div>
+    </div>
+    <div class="cal-grid" id="cal-grid"><!-- filled by JS --></div>
+
+    <div class="cal-events-list">
+      <h4>📅 All Upcoming Events</h4>
+      <div class="cal-event-row">
+        <div class="cal-event-date">APR 19</div>
+        <div>
+          <div class="cal-event-title">Skagit Valley Tulip Festival</div>
+          <div class="cal-event-meta">📍 Burlington, WA &nbsp;·&nbsp; Easy Walk &nbsp;·&nbsp; 4 hrs</div>
+        </div>
+      </div>
+      <div class="cal-event-row" style="border-left-color:var(--teal)">
+        <div class="cal-event-date">MAY 3</div>
+        <div>
+          <div class="cal-event-title">Tea &amp; Trails: Snohomish</div>
+          <div class="cal-event-meta">📍 Snohomish, WA &nbsp;·&nbsp; 1.5 mi stroll &nbsp;·&nbsp; 3 hrs</div>
+        </div>
+      </div>
+      <div class="cal-event-row">
+        <div class="cal-event-date">MAY 10</div>
+        <div>
+          <div class="cal-event-title">Snow Lake Morning Hike</div>
+          <div class="cal-event-meta">📍 Snoqualmie Pass &nbsp;·&nbsp; 2.5 mi &nbsp;·&nbsp; 5 hrs</div>
+        </div>
+      </div>
+      <div class="cal-event-row" style="border-left-color:var(--teal)">
+        <div class="cal-event-date">MAY 24</div>
+        <div>
+          <div class="cal-event-title">Burke-Gilman Trail Scenic Ride</div>
+          <div class="cal-event-meta">📍 Seattle, WA &nbsp;·&nbsp; 8 mi ride &nbsp;·&nbsp; 3 hrs</div>
+        </div>
+      </div>
+      <div class="cal-event-row">
+        <div class="cal-event-date">JUN 21</div>
+        <div>
+          <div class="cal-event-title">Summer Solstice Kayak &amp; Picnic</div>
+          <div class="cal-event-meta">📍 Lake Union, Seattle &nbsp;·&nbsp; Beginner &nbsp;·&nbsp; 4 hrs</div>
+        </div>
+      </div>
+      <div class="cal-event-row" style="border-left-color:var(--forest)">
+        <div class="cal-event-date">OCT 11</div>
+        <div>
+          <div class="cal-event-title">Fall Colors Hike: Tiger Mountain</div>
+          <div class="cal-event-meta">📍 Issaquah, WA &nbsp;·&nbsp; 3 mi &nbsp;·&nbsp; 4.5 hrs</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:40px;">
+      <a class="btn btn-primary" href="events.html">View Full Event Details</a>
+    </div>
+  </div>
+
+</div><!-- /page-body -->
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo"><span class="she">She</span><span class="rest"> Goes Outside</span></span>
+      <p>Adventures for women who love exploring, good food, fresh air, and great company.</p>
+      <div class="social-links">
+        <a class="social-link" href="#" title="Instagram">📸</a>
+        <a class="social-link" href="#" title="Facebook">👍</a>
+        <a class="social-link" href="#" title="TikTok">🎵</a>
+        <a class="social-link" href="#" title="Pinterest">📌</a>
+        <a class="social-link" href="#" title="LinkedIn">💼</a>
+        <a class="social-link" href="#" title="YouTube">▶️</a>
+      </div>
+    </div>
+    <div class="footer-col"><h5>Explore</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">Our Story</a></li><li><a href="events.html">Upcoming Events</a></li><li><a href="calendar.html">Calendar</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+    <div class="footer-col"><h5>Connect</h5><ul><li><a href="faq.html">FAQs</a></li><li><a href="contact.html">Contact JoAnne</a></li><li><a href="#">Newsletter</a></li></ul></div>
+    <div class="footer-col"><h5>Adventures</h5><ul><li><a href="events.html">Hiking Events</a></li><li><a href="events.html">Biking Events</a></li><li><a href="events.html">Water Activities</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 She Goes Outside. All rights reserved. Founded by JoAnne Yorkston.</span>
+    <span class="tagline">✦ &nbsp; Get Out There! &nbsp; ✦</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
