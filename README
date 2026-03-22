@@ -1,0 +1,142 @@
+# She Goes Outside 🌿
+
+**Adventures for women who love exploring, good food, fresh air, and great company.**
+
+A static website for *She Goes Outside*, founded by JoAnne Yorkston — an outdoor adventure community for women in the Pacific Northwest and beyond.
+
+---
+
+## 📁 Project Structure
+
+```
+she-goes-outside/
+├── index.html          # Home page
+├── about.html          # About JoAnne & the brand story
+├── events.html         # Upcoming events (filterable)
+├── calendar.html       # Monthly event calendar
+├── blog.html           # Adventure blog / articles
+├── faq.html            # Frequently asked questions
+├── contact.html        # Contact form + social links
+├── css/
+│   ├── styles.css      # All shared styles & components
+│   └── illustrations.css  # Notes on SVG placeholder system
+├── js/
+│   └── main.js         # Nav, FAQ accordion, filter, calendar
+└── images/             # Drop your real photos here
+```
+
+---
+
+## 🎨 Brand Colors
+
+| Name    | Hex       | Use                        |
+|---------|-----------|----------------------------|
+| Trek    | `#E07B3F` | Primary CTAs, accents      |
+| Peach   | `#F4B896` | Secondary highlights       |
+| Bloom   | `#F9C89A` | Light backgrounds, hovers  |
+| Teal    | `#4A9E8E` | Dates, labels, links       |
+| Forest  | `#2A7264` | Headings, nav active       |
+| Pine    | `#1A3D36` | Dark backgrounds, footer   |
+| Cream   | `#FFFAF5` | Page background            |
+
+---
+
+## 🖼️ Replacing Placeholder Illustrations
+
+All event cards, blog headers, and the founder portrait use hand-drawn SVG illustrations as placeholders. To swap in real photos:
+
+1. Add your `.jpg` or `.webp` images to the `/images/` folder
+2. Find the `<div class="event-img">` (or `.blog-img`, `.founder-img`) in the relevant HTML file
+3. Replace the `<svg>` block with:
+
+```html
+<img src="images/your-photo.jpg" alt="Description of photo"
+     style="width:100%; height:100%; object-fit:cover;" />
+```
+
+---
+
+## 🔗 Updating Event Links
+
+Each event card has a booking button pointing to Eventbrite:
+
+```html
+<a class="btn btn-primary" href="https://www.eventbrite.com" target="_blank">
+  Book on Eventbrite →
+</a>
+```
+
+Replace `https://www.eventbrite.com` with the real Eventbrite event URL.
+
+---
+
+## 📅 Updating the Calendar
+
+Events are defined in `js/main.js` in the `CAL_EVENTS` object:
+
+```js
+var CAL_EVENTS = {
+  '2026-4-19':  'Skagit Valley Tulip Festival',
+  '2026-5-3':   'Tea & Trails: Snohomish',
+  // Add more events here: 'YYYY-M-D': 'Event Name'
+};
+```
+
+Format: `'YEAR-MONTH-DAY'` (no leading zeros on month or day).
+
+---
+
+## 📬 Connecting the Contact Form
+
+The contact form currently shows a visual confirmation on submit. To connect it to a real backend:
+
+**Option A — Formspree (free, easy):**
+1. Sign up at [formspree.io](https://formspree.io)
+2. Create a new form and get your endpoint URL
+3. In `contact.html`, update the submit handler in `js/main.js` to POST to your Formspree endpoint
+
+**Option B — Mailchimp / ConvertKit:**
+Replace the newsletter form action with your Mailchimp embed code.
+
+---
+
+## 📱 Social Media Links
+
+Update the `href="#"` placeholders in every footer and the contact page:
+
+```html
+<a class="social-link" href="https://instagram.com/shegoesoutside" title="Instagram">📸</a>
+<a class="social-link" href="https://facebook.com/shegoesoutside" title="Facebook">👍</a>
+<!-- etc. -->
+```
+
+---
+
+## 🚀 Deploying
+
+This is a **pure static site** — no build step needed.
+
+**GitHub Pages (free):**
+1. Push this folder to a GitHub repo
+2. Go to Settings → Pages → Source: `main` branch, `/ (root)`
+3. Your site will be live at `https://yourusername.github.io/she-goes-outside`
+
+**Netlify (recommended for custom domain):**
+1. Drag and drop the folder at [netlify.com/drop](https://app.netlify.com/drop)
+2. Connect a custom domain like `shegoesoutside.com`
+
+---
+
+## ✏️ Content To Update Before Launch
+
+- [ ] Replace `hello@shegoesoutside.com` with real email in `contact.html`
+- [ ] Add real social media URLs in all footers and `contact.html`
+- [ ] Replace SVG placeholders with real photos in `/images/`
+- [ ] Update Eventbrite links in `events.html` and `index.html`
+- [ ] Add JoAnne's real bio photo in `about.html`
+- [ ] Update calendar events in `js/main.js`
+
+---
+
+*Built with love for JoAnne Yorkston and the She Goes Outside community. 🌲*
+*✦ Get Out There! ✦*
