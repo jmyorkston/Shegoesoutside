@@ -318,16 +318,22 @@
       </div>
 
       <div class="cs-form-wrap">
-        <label class="cs-form-label">Get notified when events go live:</label>
-        <div class="cs-form-row">
-          <input type="email" id="cs-email" placeholder="your@email.com" autocomplete="email"/>
-          <button class="btn btn-primary" onclick="handleSignup()">✦ Notify Me</button>
-        </div>
-        <p class="cs-form-note">No spam ever — just a heads-up when adventures open for sign-up. Unsubscribe any time.</p>
-        <div class="cs-success" id="cs-success">🎉 You're on the list! We'll be in touch soon. Get outside in the meantime 🌲</div>
-      </div>
+  <label class="cs-form-label">Get notified when events go live:</label>
+  <form action="https://shegoesoutside.us7.list-manage.com/subscribe/post?u=53dd364eebef9bcb077e119a5&id=f7981cda91&f_id=007b98e0f0"
+        method="POST" novalidate target="_blank">
+    <!-- Anti-bot field — do not remove -->
+    <div style="position:absolute;left:-5000px;" aria-hidden="true">
+      <input type="text" name="b_53dd364eebef9bcb077e119a5_f7981cda91" tabindex="-1" value="">
+    </div>
+    <div class="cs-form-row">
+      <input type="email" name="EMAIL" id="cs-email" placeholder="your@email.com" autocomplete="email" required/>
+      <button type="submit" class="btn btn-primary">✦ Notify Me</button>
+    </div>
+  </form>
+  <p class="cs-form-note">No spam ever — just a heads-up when adventures open for sign-up. Unsubscribe any time.</p>
+</div>
 
-      <!-- Live countdown to May 1 2026 launch -->
+      <!-- Live countdown to May 1 2026 launch 
       <div class="cs-countdown">
         <div class="cs-count-block">
           <div class="cs-count-num" id="cd-days">--</div>
@@ -345,7 +351,7 @@
           <div class="cs-count-num" id="cd-secs">--</div>
           <div class="cs-count-label">Secs</div>
         </div>
-      </div>
+      </div> -->
 
       <a class="cs-back" href="index.html">← Back to home</a>
     </div>
