@@ -4,9 +4,215 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Events — She Goes Outside</title>
-  <meta name="description" content="Upcoming outdoor adventures for women in the Pacific Northwest. Hiking, biking, kayaking, food tours and more."/>
+  <meta name="description" content="New outdoor adventures are on their way. Sign up to be first to know when events go live."/>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/styles.css"/>
+  <style>
+    /* ── Coming Soon page styles ── */
+    .cs-wrap {
+      min-height: calc(100vh - 72px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 40px 60px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(160deg, var(--cream) 0%, #EDF7F4 60%, var(--warm-white) 100%);
+    }
+
+    /* Animated background shapes */
+    .cs-bg {
+      position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+    }
+    .cs-bg-circle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.07;
+      animation: floatUp 12s ease-in-out infinite;
+    }
+    .cs-bg-circle:nth-child(1) { width: 420px; height: 420px; background: var(--teal);    top: -80px;  left: -100px; animation-delay: 0s; }
+    .cs-bg-circle:nth-child(2) { width: 280px; height: 280px; background: var(--trek);    bottom: 60px; right: -60px; animation-delay: 3s; }
+    .cs-bg-circle:nth-child(3) { width: 160px; height: 160px; background: var(--forest);  top: 40%;   right: 12%;  animation-delay: 6s; }
+    .cs-bg-circle:nth-child(4) { width: 100px; height: 100px; background: var(--peach);   bottom: 20%; left: 8%;    animation-delay: 2s; }
+
+    @keyframes floatUp {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50%       { transform: translateY(-28px) scale(1.04); }
+    }
+
+    /* Scattered trail dots */
+    .cs-dots {
+      position: absolute; inset: 0; pointer-events: none;
+    }
+    .cs-dot {
+      position: absolute;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--teal);
+      opacity: 0.18;
+      animation: pulse 4s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.18; }
+      50%       { transform: scale(1.6); opacity: 0.32; }
+    }
+
+    /* Content */
+    .cs-content {
+      position: relative;
+      text-align: center;
+      max-width: 640px;
+    }
+
+    .cs-eyebrow {
+      font-size: 11px; letter-spacing: 5px; text-transform: uppercase;
+      color: var(--trek); font-weight: 800; margin-bottom: 20px;
+      animation: fadeSlideDown 0.7s ease both;
+    }
+
+    .cs-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(38px, 5.5vw, 64px);
+      font-weight: 400;
+      color: var(--pine);
+      line-height: 1.1;
+      margin-bottom: 24px;
+      animation: fadeSlideDown 0.7s ease 0.1s both;
+    }
+    .cs-headline em { font-style: italic; color: var(--trek); }
+
+    .cs-sub {
+      font-size: 17px; line-height: 1.75; color: var(--muted);
+      margin-bottom: 48px;
+      animation: fadeSlideDown 0.7s ease 0.2s both;
+    }
+
+    /* SVG illustration */
+    .cs-illustration {
+      margin: 0 auto 44px;
+      width: 220px;
+      animation: fadeSlideDown 0.7s ease 0.15s both;
+    }
+    .cs-illustration svg { width: 100%; height: auto; }
+
+    /* Trail line decoration */
+    .cs-trail {
+      display: flex; align-items: center; justify-content: center;
+      gap: 10px; margin-bottom: 48px;
+      animation: fadeSlideDown 0.7s ease 0.25s both;
+    }
+    .cs-trail-line {
+      width: 60px; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--peach), transparent);
+    }
+    .cs-trail-mark { font-size: 18px; color: var(--trek); }
+
+    /* Email form */
+    .cs-form-wrap {
+      background: white;
+      border: 1.5px solid rgba(224,123,63,0.15);
+      border-radius: 20px;
+      padding: 36px 40px 40px;
+      box-shadow: 0 8px 40px rgba(42,114,100,0.08);
+      animation: fadeSlideDown 0.7s ease 0.3s both;
+    }
+    .cs-form-label {
+      font-size: 13px; font-weight: 800; letter-spacing: 0.5px;
+      color: var(--pine); margin-bottom: 18px; display: block;
+    }
+    .cs-form-row {
+      display: flex; gap: 10px; flex-wrap: wrap;
+    }
+    .cs-form-row input[type="email"] {
+      flex: 1; min-width: 200px;
+      padding: 14px 20px;
+      border: 1.5px solid rgba(42,114,100,0.2);
+      border-radius: 50px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px; font-weight: 600;
+      color: var(--text);
+      background: var(--cream);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .cs-form-row input[type="email"]:focus {
+      border-color: var(--teal);
+    }
+    .cs-form-row input[type="email"]::placeholder { color: var(--muted); font-weight: 600; }
+    .cs-form-row .btn-primary {
+      padding: 14px 28px; font-size: 13px; white-space: nowrap;
+    }
+    .cs-form-note {
+      font-size: 12px; color: var(--muted); margin-top: 14px;
+    }
+
+    /* Countdown */
+    .cs-countdown {
+      display: flex; gap: 20px; justify-content: center;
+      margin-top: 52px;
+      animation: fadeSlideDown 0.7s ease 0.35s both;
+    }
+    .cs-count-block {
+      display: flex; flex-direction: column; align-items: center;
+      background: white;
+      border: 1.5px solid rgba(74,158,142,0.2);
+      border-radius: 16px;
+      padding: 18px 22px 14px;
+      min-width: 72px;
+      box-shadow: 0 4px 16px rgba(42,114,100,0.06);
+    }
+    .cs-count-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px; font-weight: 600;
+      color: var(--pine); line-height: 1;
+      margin-bottom: 6px;
+    }
+    .cs-count-label {
+      font-size: 9px; font-weight: 800;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* Back home link */
+    .cs-back {
+      display: inline-block;
+      margin-top: 40px;
+      font-size: 13px; font-weight: 800;
+      color: var(--forest); text-decoration: none;
+      letter-spacing: 0.3px;
+      transition: color 0.2s;
+      animation: fadeSlideDown 0.7s ease 0.4s both;
+    }
+    .cs-back:hover { color: var(--trek); }
+
+    /* Success message */
+    .cs-success {
+      display: none;
+      background: linear-gradient(135deg, var(--forest), var(--teal));
+      color: white;
+      border-radius: 14px;
+      padding: 20px 28px;
+      font-size: 15px; font-weight: 700;
+      margin-top: 16px;
+      text-align: center;
+    }
+
+    @keyframes fadeSlideDown {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 560px) {
+      .cs-wrap { padding: 60px 24px 40px; }
+      .cs-form-wrap { padding: 28px 24px 32px; }
+      .cs-form-row { flex-direction: column; }
+      .cs-countdown { gap: 10px; }
+      .cs-count-block { min-width: 58px; padding: 14px 14px 10px; }
+      .cs-count-num { font-size: 26px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -40,196 +246,111 @@
 </nav>
 
 <div class="page-body">
+  <div class="cs-wrap">
 
-  <div class="page-hero">
-    <div class="section-eyebrow">Adventures Await</div>
-    <h1 class="section-title" style="margin-bottom:16px;">Upcoming <em>Events</em></h1>
-    <p>Every event is designed for women who want to explore, connect, and have a genuinely wonderful time outdoors.</p>
-  </div>
-
-  <div class="filter-bar">
-    <span style="font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-right:8px;">Filter:</span>
-    <button class="filter-btn active" data-filter="all">All Events</button>
-    <button class="filter-btn" data-filter="hike">🥾 Hiking</button>
-    <button class="filter-btn" data-filter="bike">🚴‍♀️ Biking</button>
-    <button class="filter-btn" data-filter="water">🛶 Water</button>
-    <button class="filter-btn" data-filter="seasonal">🌸 Seasonal</button>
-    <button class="filter-btn" data-filter="social">🍵 Food &amp; Social</button>
-  </div>
-
-  <div class="events-page-grid">
-
-    <div class="event-card" data-type="seasonal">
-      <div class="event-img">
-        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-          <rect width="400" height="200" fill="#E8F6F3"/>
-          <rect x="0" y="130" width="400" height="70" fill="#A8D8CF"/>
-          <g fill="#E07B3F"><circle cx="50"  cy="125" r="8"/><rect x="47"  y="128" width="6" height="18" rx="2" fill="#3D9181"/></g>
-          <g fill="#F4B896"><circle cx="90"  cy="118" r="8"/><rect x="87"  y="121" width="6" height="20" rx="2" fill="#3D9181"/></g>
-          <g fill="#BF5220"><circle cx="130" cy="125" r="7"/><rect x="127" y="128" width="6" height="17" rx="2" fill="#3D9181"/></g>
-          <g fill="#E07B3F"><circle cx="170" cy="120" r="8"/><rect x="167" y="123" width="6" height="19" rx="2" fill="#3D9181"/></g>
-          <g fill="#F9C89A"><circle cx="210" cy="126" r="7"/><rect x="207" y="129" width="6" height="16" rx="2" fill="#3D9181"/></g>
-          <g fill="#F4B896"><circle cx="250" cy="118" r="8"/><rect x="247" y="121" width="6" height="20" rx="2" fill="#3D9181"/></g>
-          <g fill="#E07B3F"><circle cx="290" cy="124" r="7"/><rect x="287" y="127" width="6" height="17" rx="2" fill="#3D9181"/></g>
-          <g fill="#BF5220"><circle cx="330" cy="120" r="8"/><rect x="327" y="123" width="6" height="19" rx="2" fill="#3D9181"/></g>
-          <rect width="400" height="100" fill="#D4EEF9" opacity="0.7"/>
-        </svg>
-        <div class="event-badge">Seasonal 🌷</div>
-      </div>
-      <div class="event-body">
-        <div class="event-date">April 19, 2026</div>
-        <div class="event-title">Skagit Valley Tulip Festival</div>
-        <div class="event-desc">Walk through endless rows of brilliant tulips in the Skagit Valley. We'll have a local bakery stop and plenty of photo moments.</div>
-        <div class="event-meta"><span>📍 Burlington, WA</span><span>🌤 Easy Walk</span><span>⏱ 4 hrs</span></div>
-        <a class="btn btn-primary" href="https://www.eventbrite.com" target="_blank" rel="noopener">Book on Eventbrite →</a>
-      </div>
+    <!-- Animated background -->
+    <div class="cs-bg">
+      <div class="cs-bg-circle"></div>
+      <div class="cs-bg-circle"></div>
+      <div class="cs-bg-circle"></div>
+      <div class="cs-bg-circle"></div>
     </div>
+    <div class="cs-dots" id="cs-dots"></div>
 
-    <div class="event-card" data-type="social">
-      <div class="event-img">
-        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-          <rect width="400" height="200" fill="#FEF3EA"/>
-          <rect x="0" y="120" width="400" height="80" fill="#F4B896" opacity="0.5"/>
-          <rect x="100" y="95" width="60" height="45" rx="8" fill="#E07B3F"/>
-          <ellipse cx="130" cy="95"  rx="30" ry="8" fill="#BF5220"/>
-          <ellipse cx="130" cy="140" rx="30" ry="8" fill="#BF5220"/>
-          <path d="M160 108 Q175 108 175 120 Q175 132 160 132" stroke="#BF5220" stroke-width="5" fill="none" stroke-linecap="round"/>
-          <rect x="240" y="90" width="60" height="45" rx="8" fill="#4A9E8E"/>
-          <ellipse cx="270" cy="90"  rx="30" ry="8" fill="#2A7264"/>
-          <ellipse cx="270" cy="135" rx="30" ry="8" fill="#2A7264"/>
-          <path d="M300 103 Q315 103 315 115 Q315 127 300 127" stroke="#2A7264" stroke-width="5" fill="none" stroke-linecap="round"/>
-          <path d="M120 88 Q115 78 120 68" stroke="#F9C89A" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
-          <path d="M135 85 Q130 72 135 62" stroke="#F9C89A" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
-          <rect x="40" y="155" width="320" height="12" rx="6" fill="#BF5220" opacity="0.4"/>
-          <rect width="400" height="80" fill="#FEF3EA" opacity="0.6"/>
+    <div class="cs-content">
+
+      <div class="cs-eyebrow">Adventures Await</div>
+
+      <!-- Inline nature illustration -->
+      <div class="cs-illustration">
+        <svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg">
+          <!-- Sky -->
+          <rect width="220" height="180" rx="18" fill="#D4EEF9" opacity="0.5"/>
+          <!-- Mountains back -->
+          <path d="M0 130 L50 60 L100 130Z" fill="#4A9E8E" opacity="0.4"/>
+          <path d="M80 130 L140 45 L200 130Z" fill="#2A7264" opacity="0.55"/>
+          <path d="M160 130 L195 80 L220 130Z" fill="#3D9181" opacity="0.45"/>
+          <!-- Snow caps -->
+          <path d="M140 45 L130 68 L150 68Z" fill="white" opacity="0.7"/>
+          <path d="M50 60 L43 78 L57 78Z" fill="white" opacity="0.5"/>
+          <!-- Ground -->
+          <rect x="0" y="128" width="220" height="52" rx="0" fill="#2A7264"/>
+          <path d="M0 128 Q55 118 110 124 Q165 130 220 120 L220 180 L0 180Z" fill="#236B5C"/>
+          <!-- Trees -->
+          <g fill="#1A3D36">
+            <polygon points="18,128 26,102 34,128"/><rect x="24" y="126" width="5" height="12"/>
+            <polygon points="185,128 193,105 201,128"/><rect x="191" y="126" width="5" height="12"/>
+          </g>
+          <!-- Hiker figure -->
+          <g transform="translate(98, 88)">
+            <circle cx="12" cy="0" r="7" fill="#BF5220"/>
+            <line x1="12" y1="7" x2="12" y2="28" stroke="#E07B3F" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="12" y1="14" x2="4" y2="22" stroke="#E07B3F" stroke-width="3" stroke-linecap="round"/>
+            <line x1="12" y1="14" x2="20" y2="20" stroke="#E07B3F" stroke-width="3" stroke-linecap="round"/>
+            <line x1="12" y1="28" x2="6" y2="40" stroke="#E07B3F" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="12" y1="28" x2="18" y2="40" stroke="#E07B3F" stroke-width="3.5" stroke-linecap="round"/>
+            <!-- Trekking pole -->
+            <line x1="20" y1="20" x2="26" y2="42" stroke="#BF5220" stroke-width="2" stroke-linecap="round"/>
+          </g>
+          <!-- Sun -->
+          <circle cx="185" cy="28" r="16" fill="#F9C89A" opacity="0.85"/>
+          <circle cx="185" cy="28" r="11" fill="#F4B896"/>
+          <!-- Path dots -->
+          <circle cx="60" cy="148" r="3" fill="#56A898" opacity="0.6"/>
+          <circle cx="78" cy="143" r="3" fill="#56A898" opacity="0.6"/>
+          <circle cx="96" cy="140" r="3" fill="#56A898" opacity="0.6"/>
+          <circle cx="114" cy="138" r="3" fill="#56A898" opacity="0.6"/>
+          <circle cx="132" cy="140" r="3" fill="#56A898" opacity="0.6"/>
         </svg>
-        <div class="event-badge">Food &amp; Social 🍵</div>
       </div>
-      <div class="event-body">
-        <div class="event-date">May 3, 2026</div>
-        <div class="event-title">Tea &amp; Trails: Snohomish Morning</div>
-        <div class="event-desc">Start with a gentle riverside walk through Snohomish, then settle in at a charming local tea room for a leisurely mid-morning tea experience.</div>
-        <div class="event-meta"><span>📍 Snohomish, WA</span><span>🚶 1.5 mi stroll</span><span>⏱ 3 hrs</span></div>
-        <a class="btn btn-primary" href="https://www.eventbrite.com" target="_blank" rel="noopener">Book on Eventbrite →</a>
-      </div>
-    </div>
 
-    <div class="event-card" data-type="hike">
-      <div class="event-img">
-        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-          <rect width="400" height="200" fill="#C8E6E0"/>
-          <rect x="0" y="110" width="400" height="90" fill="#1A5C4E"/>
-          <rect x="0" y="150" width="400" height="50" fill="#236B5C"/>
-          <path d="M0 110 L90 30 L180 110Z" fill="#2A7264"/>
-          <path d="M90 55 L120 110 L60 110Z" fill="white" opacity="0.4"/>
-          <path d="M180 110 L260 35 L340 110Z" fill="#1A5C4E"/>
-          <path d="M260 58 L285 110 L235 110Z" fill="white" opacity="0.35"/>
-          <g fill="#134A3D"><polygon points="10,175 25,145 40,175"/><rect x="23" y="173" width="5" height="10"/><polygon points="350,172 365,142 380,172"/><rect x="362" y="170" width="5" height="10"/></g>
-          <rect width="400" height="90" fill="#B5D8F5" opacity="0.5"/>
-        </svg>
-        <div class="event-badge">Hiking 🥾</div>
-      </div>
-      <div class="event-body">
-        <div class="event-date">May 10, 2026</div>
-        <div class="event-title">Snow Lake Morning Hike</div>
-        <div class="event-desc">One of the most beloved Cascade hikes — beautiful views, manageable terrain, and a stunning alpine lake at the end.</div>
-        <div class="event-meta"><span>📍 Snoqualmie Pass</span><span>🌿 2.5 mi</span><span>⏱ 5 hrs</span></div>
-        <a class="btn btn-primary" href="https://www.eventbrite.com" target="_blank" rel="noopener">Book on Eventbrite →</a>
-      </div>
-    </div>
+      <h1 class="cs-headline">New Adventures<br><em>Coming Soon</em></h1>
+      <p class="cs-sub">We're planning an incredible lineup of hikes, bikes, paddles, and food adventures across the Pacific Northwest. Be the first to grab a spot when registration opens.</p>
 
-    <div class="event-card" data-type="bike">
-      <div class="event-img">
-        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-          <rect width="400" height="200" fill="#E0F2EE"/>
-          <path d="M0 130 Q100 110 200 120 Q300 130 400 115 L400 200 L0 200Z" fill="#3D9181"/>
-          <path d="M0 155 Q100 140 200 148 Q300 155 400 142 L400 200 L0 200Z" fill="#2A7264"/>
-          <circle cx="120" cy="122" r="18" fill="none" stroke="#E07B3F" stroke-width="4"/>
-          <circle cx="165" cy="122" r="18" fill="none" stroke="#E07B3F" stroke-width="4"/>
-          <polygon points="130,122 145,98 160,122" fill="none" stroke="#BF5220" stroke-width="3"/>
-          <line x1="145" y1="98" x2="152" y2="104" stroke="#BF5220" stroke-width="3"/>
-          <circle cx="252" cy="118" r="18" fill="none" stroke="#4A9E8E" stroke-width="4"/>
-          <circle cx="297" cy="118" r="18" fill="none" stroke="#4A9E8E" stroke-width="4"/>
-          <polygon points="262,118 277,94 292,118" fill="none" stroke="#2A7264" stroke-width="3"/>
-          <rect width="400" height="90" fill="#D4EEF9" opacity="0.5"/>
-          <circle cx="320" cy="40" r="35" fill="white" opacity="0.6"/>
-        </svg>
-        <div class="event-badge">Biking 🚴‍♀️</div>
+      <div class="cs-trail">
+        <div class="cs-trail-line"></div>
+        <div class="cs-trail-mark">✦</div>
+        <div class="cs-trail-mark">🥾</div>
+        <div class="cs-trail-mark">🛶</div>
+        <div class="cs-trail-mark">🌸</div>
+        <div class="cs-trail-mark">✦</div>
+        <div class="cs-trail-line"></div>
       </div>
-      <div class="event-body">
-        <div class="event-date">May 24, 2026</div>
-        <div class="event-title">Burke-Gilman Trail Scenic Ride</div>
-        <div class="event-desc">A gentle 8-mile cruise along Seattle's most beloved trail, with a coffee stop at a waterfront café midway.</div>
-        <div class="event-meta"><span>📍 Seattle, WA</span><span>🚴 8 mi</span><span>⏱ 3 hrs</span></div>
-        <a class="btn btn-primary" href="https://www.eventbrite.com" target="_blank" rel="noopener">Book on Eventbrite →</a>
-      </div>
-    </div>
 
-    <div class="event-card" data-type="water">
-      <div class="event-img">
-        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-          <rect width="400" height="200" fill="#C8E6E0"/>
-          <rect x="0" y="100" width="400" height="100" fill="#4A9E8E"/>
-          <path d="M0 112 Q50 104 100 112 Q150 120 200 112 Q250 104 300 112 Q350 120 400 112 L400 200 L0 200Z" fill="#3D9181" opacity="0.7"/>
-          <ellipse cx="140" cy="115" rx="40" ry="9" fill="#E07B3F"/>
-          <path d="M100 112 L180 112" stroke="white" stroke-width="2"/>
-          <circle cx="140" cy="109" r="7" fill="#BF5220"/>
-          <ellipse cx="260" cy="120" rx="38" ry="9" fill="#F4B896"/>
-          <path d="M222 117 L298 117" stroke="white" stroke-width="2"/>
-          <circle cx="260" cy="113" r="7" fill="#E07B3F"/>
-          <rect width="400" height="105" fill="#B5D8F5" opacity="0.55"/>
-          <circle cx="330" cy="35" r="40" fill="white" opacity="0.6"/>
-        </svg>
-        <div class="event-badge">Water ☀️</div>
+      <div class="cs-form-wrap">
+        <label class="cs-form-label">Get notified when events go live:</label>
+        <div class="cs-form-row">
+          <input type="email" id="cs-email" placeholder="your@email.com" autocomplete="email"/>
+          <button class="btn btn-primary" onclick="handleSignup()">✦ Notify Me</button>
+        </div>
+        <p class="cs-form-note">No spam ever — just a heads-up when adventures open for sign-up. Unsubscribe any time.</p>
+        <div class="cs-success" id="cs-success">🎉 You're on the list! We'll be in touch soon. Get outside in the meantime 🌲</div>
       </div>
-      <div class="event-body">
-        <div class="event-date">June 21, 2026</div>
-        <div class="event-title">Summer Solstice Kayak &amp; Picnic</div>
-        <div class="event-desc">Celebrate the longest day of the year with a gentle paddle and sunset picnic. All equipment provided, no experience needed!</div>
-        <div class="event-meta"><span>📍 Lake Union, Seattle</span><span>🛶 Beginner</span><span>⏱ 4 hrs</span></div>
-        <a class="btn btn-primary" href="https://www.eventbrite.com" target="_blank" rel="noopener">Book on Eventbrite →</a>
-      </div>
-    </div>
 
-    <div class="event-card" data-type="hike">
-      <div class="event-img">
-        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-          <rect width="400" height="200" fill="#DDEEE9"/>
-          <rect x="0" y="100" width="400" height="100" fill="#236B5C"/>
-          <path d="M0 100 Q100 80 200 95 Q300 108 400 90 L400 200 L0 200Z" fill="#2A7264"/>
-          <circle cx="60"  cy="90" r="38" fill="#E07B3F" opacity="0.85"/>
-          <rect x="55"  y="118" width="10" height="30" fill="#7A3A10"/>
-          <circle cx="150" cy="82" r="32" fill="#F4B896" opacity="0.85"/>
-          <rect x="145" y="108" width="10" height="28" fill="#7A3A10"/>
-          <circle cx="240" cy="88" r="35" fill="#F9C89A" opacity="0.85"/>
-          <rect x="235" y="115" width="10" height="28" fill="#7A3A10"/>
-          <circle cx="330" cy="85" r="30" fill="#E07B3F" opacity="0.8"/>
-          <rect x="325" y="110" width="10" height="25" fill="#7A3A10"/>
-          <rect width="400" height="78" fill="#D4EEF9" opacity="0.5"/>
-        </svg>
-        <div class="event-badge">Hiking 🥾</div>
+      <!-- Live countdown to May 1 2026 launch -->
+      <div class="cs-countdown">
+        <div class="cs-count-block">
+          <div class="cs-count-num" id="cd-days">--</div>
+          <div class="cs-count-label">Days</div>
+        </div>
+        <div class="cs-count-block">
+          <div class="cs-count-num" id="cd-hours">--</div>
+          <div class="cs-count-label">Hours</div>
+        </div>
+        <div class="cs-count-block">
+          <div class="cs-count-num" id="cd-mins">--</div>
+          <div class="cs-count-label">Mins</div>
+        </div>
+        <div class="cs-count-block">
+          <div class="cs-count-num" id="cd-secs">--</div>
+          <div class="cs-count-label">Secs</div>
+        </div>
       </div>
-      <div class="event-body">
-        <div class="event-date">October 11, 2026</div>
-        <div class="event-title">Fall Colors Hike: Tiger Mountain</div>
-        <div class="event-desc">When the Cascades turn gold and orange, there's no better place to be. A peaceful autumn hike through peak fall foliage.</div>
-        <div class="event-meta"><span>📍 Issaquah, WA</span><span>🌿 3 mi</span><span>⏱ 4.5 hrs</span></div>
-        <a class="btn btn-primary" href="https://www.eventbrite.com" target="_blank" rel="noopener">Book on Eventbrite →</a>
-      </div>
-    </div>
 
-  </div><!-- /events-page-grid -->
-
-  <div class="newsletter-banner">
-    <h3>Never miss an <em>adventure</em></h3>
-    <p>Get new events delivered straight to your inbox before they fill up.</p>
-    <div class="newsletter-form">
-      <input type="email" placeholder="your@email.com"/>
-      <button class="btn">✦ Subscribe</button>
+      <a class="cs-back" href="index.html">← Back to home</a>
     </div>
   </div>
-
-</div><!-- /page-body -->
+</div>
 
 <!-- ─── FOOTER ─── -->
 <footer>
@@ -257,5 +378,61 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+  // ── Scatter trail dots ──
+  const dotsEl = document.getElementById('cs-dots');
+  const dotPositions = [
+    [12,18],[25,72],[8,54],[18,38],[30,85],[42,20],[55,65],[68,10],[72,45],[80,78],
+    [88,30],[92,62],[5,90],[38,92],[60,95],[75,88],[95,75],[15,95],[50,8],[85,5]
+  ];
+  dotPositions.forEach(([x, y], i) => {
+    const d = document.createElement('div');
+    d.className = 'cs-dot';
+    d.style.left = x + '%';
+    d.style.top  = y + '%';
+    d.style.animationDelay = (i * 0.31) + 's';
+    d.style.animationDuration = (3 + (i % 4)) + 's';
+    if (i % 3 === 1) { d.style.background = 'var(--trek)'; d.style.width = '4px'; d.style.height = '4px'; }
+    if (i % 3 === 2) { d.style.background = 'var(--peach)'; d.style.width = '5px'; d.style.height = '5px'; }
+    dotsEl.appendChild(d);
+  });
+
+  // ── Countdown to May 1 2026 ──
+  function updateCountdown() {
+    const target = new Date('2026-05-01T08:00:00-07:00');
+    const now    = new Date();
+    const diff   = target - now;
+    if (diff <= 0) {
+      document.querySelector('.cs-countdown').style.display = 'none';
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000)  / 60000);
+    const s = Math.floor((diff % 60000)    / 1000);
+    document.getElementById('cd-days').textContent  = String(d).padStart(2,'0');
+    document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-mins').textContent  = String(m).padStart(2,'0');
+    document.getElementById('cd-secs').textContent  = String(s).padStart(2,'0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // ── Email form ──
+  function handleSignup() {
+    const email = document.getElementById('cs-email').value.trim();
+    if (!email || !email.includes('@')) {
+      document.getElementById('cs-email').focus();
+      document.getElementById('cs-email').style.borderColor = 'var(--trek)';
+      return;
+    }
+    document.getElementById('cs-success').style.display = 'block';
+    document.getElementById('cs-email').value = '';
+    document.getElementById('cs-email').style.borderColor = '';
+  }
+  document.getElementById('cs-email').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') handleSignup();
+  });
+</script>
 </body>
 </html>
