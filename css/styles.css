@@ -355,6 +355,9 @@ footer {
 .blog-body    { padding: 26px; }
 .blog-date    { font-size: 11px; font-weight: 800; color: var(--teal); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
 .blog-title   { font-family: 'Playfair Display', serif; font-size: 21px; color: var(--pine); margin-bottom: 12px; line-height: 1.3; }
+.blog-card a.blog-card-link { text-decoration: none; color: inherit; display: block; }
+.blog-card a.blog-card-link .blog-title { transition: color 0.2s; }
+.blog-card a.blog-card-link:hover .blog-title { color: var(--trek); }
 .blog-excerpt { font-size: 14px; line-height: 1.7; color: var(--muted); margin-bottom: 20px; }
 .blog-author  { display: flex; align-items: center; gap: 10px; }
 .blog-avatar  { width: 32px; height: 32px; border-radius: 50%; background: var(--peach); display: flex; align-items: center; justify-content: center; font-size: 14px; }
