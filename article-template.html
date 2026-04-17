@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>5 Stunning Easy Hikes in the PNW for First-Timers — She Goes Outside</title>
+  <meta name="description" content="You don't need to be an athlete to experience the magic of the Pacific Northwest. Here are five trails that will absolutely take your breath away."/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <style>
+
+    /* ── ARTICLE HERO ── */
+    .article-hero {
+      background: linear-gradient(150deg, var(--forest) 0%, var(--pine) 100%);
+      padding: 90px 40px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 40%, rgba(74,158,142,0.25) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .article-hero-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .article-tag {
+      display: inline-block;
+      background: rgba(244,184,150,0.18);
+      color: var(--peach);
+      border: 1px solid rgba(244,184,150,0.35);
+      font-size: 10px; font-weight: 800;
+      letter-spacing: 3px; text-transform: uppercase;
+      padding: 6px 16px; border-radius: 50px;
+      margin-bottom: 22px;
+    }
+    .article-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 4.5vw, 52px);
+      font-weight: 400;
+      color: var(--warm-white);
+      line-height: 1.18;
+      margin-bottom: 24px;
+    }
+    .article-hero h1 em { font-style: italic; color: var(--peach); }
+    .article-hero-meta {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 6px 20px;
+      margin-bottom: 44px;
+    }
+    .article-hero-meta span {
+      font-size: 13px; font-weight: 700;
+      color: rgba(254,243,234,0.65);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .article-hero-meta .dot { color: rgba(244,184,150,0.4); }
+    .article-hero-img {
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      border-radius: 18px 18px 0 0;
+      overflow: hidden;
+      box-shadow: 0 -8px 40px rgba(0,0,0,0.2);
+    }
+    .article-hero-img svg { display: block; width: 100%; height: auto; }
+
+    /* ── ARTICLE BODY LAYOUT ── */
+    .article-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 64px 40px 80px;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 64px;
+      align-items: start;
+    }
+
+    /* ── MAIN CONTENT ── */
+    .article-content {
+      min-width: 0;
+    }
+    .article-content p {
+      font-size: 17px; line-height: 1.85;
+      color: var(--text);
+      margin-bottom: 26px;
+    }
+    .article-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 2.5vw, 30px);
+      font-weight: 400;
+      color: var(--pine);
+      margin: 52px 0 18px;
+      line-height: 1.25;
+    }
+    .article-content h2 em { font-style: italic; color: var(--trek); }
+    .article-content h3 {
+      font-family: 'Nunito', sans-serif;
+      font-size: 16px; font-weight: 900;
+      color: var(--forest);
+      text-transform: uppercase; letter-spacing: 1.5px;
+      margin: 36px 0 12px;
+    }
+
+    /* Hike entry card */
+    .hike-entry {
+      background: var(--warm-white);
+      border: 1.5px solid rgba(224,123,63,0.12);
+      border-left: 4px solid var(--trek);
+      border-radius: 0 14px 14px 0;
+      padding: 24px 28px;
+      margin: 32px 0;
+    }
+    .hike-number {
+      font-size: 11px; font-weight: 900;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--trek); margin-bottom: 8px;
+    }
+    .hike-entry h2 {
+      margin: 0 0 14px;
+      font-size: clamp(20px, 2vw, 26px);
+    }
+    .hike-entry p { margin-bottom: 16px; }
+    .hike-meta-row {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-top: 16px;
+    }
+    .hike-chip {
+      background: white;
+      border: 1.5px solid rgba(42,114,100,0.15);
+      border-radius: 50px;
+      padding: 5px 14px;
+      font-size: 12px; font-weight: 800;
+      color: var(--forest);
+    }
+
+    /* Pull quote */
+    .pull-quote {
+      border-left: 4px solid var(--teal);
+      margin: 44px 0;
+      padding: 8px 0 8px 28px;
+    }
+    .pull-quote blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(20px, 2.2vw, 26px);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--pine);
+      line-height: 1.45;
+      margin: 0 0 12px;
+    }
+    .pull-quote cite {
+      font-size: 12px; font-weight: 800;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--muted); font-style: normal;
+    }
+
+    /* Inline illustration */
+    .article-img {
+      margin: 40px 0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(42,114,100,0.1);
+    }
+    .article-img svg { display: block; width: 100%; }
+    .article-img figcaption {
+      background: var(--warm-white);
+      padding: 12px 20px;
+      font-size: 13px; font-style: italic;
+      color: var(--muted); font-weight: 600;
+      border-top: 1px solid rgba(224,123,63,0.1);
+    }
+
+    /* Tip box */
+    .tip-box {
+      background: linear-gradient(135deg, #EDF7F4, #E0F2EE);
+      border: 1.5px solid rgba(74,158,142,0.25);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin: 36px 0;
+    }
+    .tip-box-label {
+      font-size: 10px; font-weight: 900;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 10px;
+    }
+    .tip-box p {
+      margin: 0;
+      font-size: 15px; color: var(--pine);
+    }
+
+    /* Share bar */
+    .article-share {
+      display: flex; align-items: center; gap: 12px;
+      padding: 28px 0;
+      border-top: 1px solid rgba(224,123,63,0.12);
+      border-bottom: 1px solid rgba(224,123,63,0.12);
+      margin: 52px 0 0;
+      flex-wrap: wrap;
+    }
+    .article-share-label {
+      font-size: 11px; font-weight: 900;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--muted); margin-right: 4px;
+    }
+    .share-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 9px 18px; border-radius: 50px;
+      font-size: 12px; font-weight: 800;
+      text-decoration: none; cursor: pointer;
+      transition: all 0.2s; border: none;
+      font-family: 'Nunito', sans-serif;
+    }
+    .share-btn-ig  { background: var(--warm-white); color: var(--text); border: 1.5px solid rgba(224,123,63,0.2); }
+    .share-btn-fb  { background: var(--warm-white); color: var(--text); border: 1.5px solid rgba(224,123,63,0.2); }
+    .share-btn-copy{ background: var(--trek); color: white; }
+    .share-btn:hover { transform: translateY(-2px); }
+
+    /* Author bio */
+    .author-bio {
+      display: flex; gap: 24px; align-items: flex-start;
+      background: var(--warm-white);
+      border: 1.5px solid rgba(224,123,63,0.14);
+      border-radius: 20px;
+      padding: 32px;
+      margin: 52px 0 0;
+    }
+    .author-avatar {
+      width: 72px; height: 72px; flex-shrink: 0;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal), var(--forest));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 30px;
+    }
+    .author-bio-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px; color: var(--pine);
+      margin-bottom: 4px;
+    }
+    .author-bio-title {
+      font-size: 11px; font-weight: 800;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--trek); margin-bottom: 12px;
+    }
+    .author-bio p { font-size: 15px; line-height: 1.7; color: var(--muted); margin: 0; }
+
+    /* ── SIDEBAR ── */
+    .article-sidebar {
+      position: sticky;
+      top: 92px;
+    }
+    .sidebar-card {
+      background: white;
+      border: 1.5px solid rgba(224,123,63,0.13);
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 20px rgba(42,114,100,0.06);
+    }
+    .sidebar-card-title {
+      font-size: 10px; font-weight: 900;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--trek); margin-bottom: 18px;
+    }
+
+    /* Table of contents */
+    .toc-list { list-style: none; }
+    .toc-list li {
+      border-bottom: 1px solid rgba(224,123,63,0.1);
+      padding: 10px 0;
+    }
+    .toc-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .toc-list a {
+      text-decoration: none; color: var(--text);
+      font-size: 13px; font-weight: 700;
+      display: flex; align-items: center; gap: 8px;
+      transition: color 0.2s;
+    }
+    .toc-list a:hover { color: var(--trek); }
+    .toc-num {
+      font-size: 10px; font-weight: 900;
+      color: var(--trek); min-width: 18px;
+    }
+
+    /* Sidebar newsletter */
+    .sidebar-newsletter input[type="email"] {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid rgba(42,114,100,0.2);
+      border-radius: 50px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 13px; font-weight: 600;
+      color: var(--text); background: var(--cream);
+      outline: none; margin-bottom: 10px;
+      box-sizing: border-box;
+      transition: border-color 0.2s;
+    }
+    .sidebar-newsletter input[type="email"]:focus { border-color: var(--teal); }
+    .sidebar-newsletter input::placeholder { color: var(--muted); }
+    .sidebar-newsletter .btn { width: 100%; text-align: center; display: block; padding: 12px; font-size: 13px; }
+    .sidebar-newsletter p { font-size: 11px; color: var(--muted); margin-top: 10px; }
+
+    /* Related posts */
+    .related-post {
+      display: flex; gap: 12px; align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(224,123,63,0.1);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .related-post:last-child { border-bottom: none; padding-bottom: 0; }
+    .related-post:hover { opacity: 0.75; }
+    .related-post-thumb {
+      width: 56px; height: 56px; flex-shrink: 0;
+      border-radius: 10px; overflow: hidden;
+    }
+    .related-post-thumb svg { width: 100%; height: 100%; }
+    .related-post-title {
+      font-size: 13px; font-weight: 800;
+      color: var(--pine); line-height: 1.4;
+    }
+    .related-post-date {
+      font-size: 11px; color: var(--muted);
+      font-weight: 600; margin-top: 3px;
+    }
+
+    /* Back to blog */
+    .article-back {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 800;
+      color: var(--forest); text-decoration: none;
+      letter-spacing: 0.3px; transition: color 0.2s;
+      margin-bottom: 40px;
+    }
+    .article-back:hover { color: var(--trek); }
+
+    /* ── RELATED ARTICLES (bottom) ── */
+    .related-section {
+      background: var(--warm-white);
+      padding: 72px 40px;
+      border-top: 1px solid rgba(224,123,63,0.12);
+    }
+    .related-section-inner { max-width: 1100px; margin: 0 auto; }
+    .related-section .section-eyebrow { margin-bottom: 10px; }
+    .related-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 3vw, 36px);
+      color: var(--pine); margin-bottom: 40px;
+    }
+    .related-section h2 em { font-style: italic; color: var(--trek); }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    /* Progress bar */
+    .reading-progress {
+      position: fixed; top: 72px; left: 0; right: 0;
+      height: 3px; background: rgba(224,123,63,0.1);
+      z-index: 99;
+    }
+    .reading-progress-bar {
+      height: 100%; width: 0%;
+      background: linear-gradient(90deg, var(--trek), var(--teal));
+      transition: width 0.1s linear;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .article-wrap {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 48px 24px 60px;
+      }
+      .article-sidebar { position: static; }
+      .related-grid { grid-template-columns: 1fr 1fr; }
+      .article-hero { padding: 72px 24px 0; }
+    }
+    @media (max-width: 600px) {
+      .related-grid { grid-template-columns: 1fr; }
+      .author-bio { flex-direction: column; }
+      .article-hero { padding: 60px 20px 0; }
+      .article-wrap { padding: 36px 20px 48px; }
+      .related-section { padding: 52px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Reading progress bar -->
+<div class="reading-progress"><div class="reading-progress-bar" id="progress-bar"></div></div>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a class="nav-logo" href="index.html">
+    <svg viewBox="0 0 42 42" width="38" height="38" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="21" cy="21" r="20" fill="#FEF3EA"/>
+      <circle cx="21" cy="21" r="20" fill="none" stroke="#2A7264" stroke-width="2"/>
+      <path d="M5 30 L10 22 L14 25 L18 18 L21 22 L25 17 L29 20 L33 18 L37 22 L37 38 L5 38Z" fill="#3D9181"/>
+      <path d="M5 34 Q12 30 21 32 Q30 34 37 30 L37 38 L5 38Z" fill="#56A898"/>
+      <path d="M21 38 Q20 32 21 27 Q22 22 20 17" stroke="#F4B896" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+      <circle cx="20" cy="12" r="3.5" fill="#BF5220"/>
+      <path d="M20 15.5 L19.5 20" stroke="#BF5220" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M20 17 Q17 15 14 12" stroke="#BF5220" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <path d="M20 17 Q23 15 26 12" stroke="#BF5220" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </svg>
+    <div class="nav-logo-text"><span class="she">She</span><span class="rest"> Goes Outside</span></div>
+  </a>
+  <button class="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="calendar.html">Calendar</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="events.html" class="btn nav-cta">Get Out There!</a></li>
+  </ul>
+</nav>
+
+<div class="page-body">
+
+  <!-- ─── HERO ─── -->
+  <div class="article-hero">
+    <div class="article-hero-inner">
+      <div class="article-tag">Trail Guide</div>
+      <h1>5 Stunning Easy Hikes in the PNW<br>for <em>First-Timers</em></h1>
+      <div class="article-hero-meta">
+        <span>🌿 JoAnne Yorkston</span>
+        <span class="dot">·</span>
+        <span>March 15, 2026</span>
+        <span class="dot">·</span>
+        <span>⏱ 6 min read</span>
+      </div>
+      <!-- Hero illustration -->
+      <div class="article-hero-img">
+        <svg viewBox="0 0 860 380" xmlns="http://www.w3.org/2000/svg">
+          <rect width="860" height="380" fill="#C8E6E0"/>
+          <!-- Sky gradient -->
+          <rect width="860" height="240" fill="#B5D8F5" opacity="0.6"/>
+          <!-- Far mountains -->
+          <path d="M0 240 L120 100 L240 180 L360 80 L480 160 L600 90 L720 150 L860 100 L860 380 L0 380Z" fill="#4A9E8E" opacity="0.35"/>
+          <!-- Mid mountains -->
+          <path d="M0 260 L100 140 L200 210 L320 120 L440 200 L560 130 L680 190 L800 140 L860 170 L860 380 L0 380Z" fill="#2A7264" opacity="0.55"/>
+          <!-- Snow caps -->
+          <path d="M320 120 L305 152 L335 152Z" fill="white" opacity="0.65"/>
+          <path d="M560 130 L547 158 L573 158Z" fill="white" opacity="0.55"/>
+          <path d="M120 100 L108 128 L132 128Z" fill="white" opacity="0.5"/>
+          <!-- Foreground ground -->
+          <path d="M0 280 Q215 255 430 268 Q645 280 860 262 L860 380 L0 380Z" fill="#1A5C4E"/>
+          <path d="M0 308 Q215 288 430 298 Q645 308 860 292 L860 380 L0 380Z" fill="#134A3D"/>
+          <!-- Trees left -->
+          <g fill="#0F3A2E">
+            <polygon points="30,280 46,238 62,280"/><rect x="44" y="278" width="5" height="20"/>
+            <polygon points="65,280 78,246 91,280"/><rect x="76" y="278" width="5" height="18"/>
+            <polygon points="18,280 29,252 40,280"/><rect x="27" y="278" width="4" height="16"/>
+          </g>
+          <!-- Trees right -->
+          <g fill="#0F3A2E">
+            <polygon points="780,280 796,238 812,280"/><rect x="794" y="278" width="5" height="20"/>
+            <polygon points="815,280 828,246 841,280"/><rect x="826" y="278" width="5" height="18"/>
+            <polygon points="766,280 779,252 792,280"/><rect x="777" y="278" width="4" height="16"/>
+          </g>
+          <!-- Hikers (3 figures on a path) -->
+          <!-- Path -->
+          <path d="M280 310 Q430 295 580 308" stroke="#56A898" stroke-width="3" fill="none" stroke-dasharray="6 4" opacity="0.7"/>
+          <!-- Hiker 1 -->
+          <g transform="translate(310, 268)">
+            <circle cx="0" cy="0" r="8" fill="#BF5220"/>
+            <line x1="0" y1="8" x2="0" y2="30" stroke="#E07B3F" stroke-width="4" stroke-linecap="round"/>
+            <line x1="0" y1="15" x2="-8" y2="24" stroke="#E07B3F" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="0" y1="15" x2="8" y2="22" stroke="#E07B3F" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="0" y1="30" x2="-5" y2="44" stroke="#E07B3F" stroke-width="4" stroke-linecap="round"/>
+            <line x1="0" y1="30" x2="5" y2="44" stroke="#E07B3F" stroke-width="4" stroke-linecap="round"/>
+            <line x1="8" y1="22" x2="14" y2="46" stroke="#BF5220" stroke-width="2.5" stroke-linecap="round"/>
+          </g>
+          <!-- Hiker 2 -->
+          <g transform="translate(430, 262)">
+            <circle cx="0" cy="0" r="8" fill="#2A7264"/>
+            <line x1="0" y1="8" x2="0" y2="30" stroke="#3D9181" stroke-width="4" stroke-linecap="round"/>
+            <line x1="0" y1="15" x2="-8" y2="24" stroke="#3D9181" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="0" y1="15" x2="8" y2="22" stroke="#3D9181" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="0" y1="30" x2="-5" y2="44" stroke="#3D9181" stroke-width="4" stroke-linecap="round"/>
+            <line x1="0" y1="30" x2="5" y2="44" stroke="#3D9181" stroke-width="4" stroke-linecap="round"/>
+          </g>
+          <!-- Hiker 3 -->
+          <g transform="translate(550, 268)">
+            <circle cx="0" cy="0" r="8" fill="#F4B896"/>
+            <line x1="0" y1="8" x2="0" y2="30" stroke="#E07B3F" stroke-width="4" stroke-linecap="round"/>
+            <line x1="0" y1="15" x2="-8" y2="24" stroke="#E07B3F" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="0" y1="15" x2="8" y2="22" stroke="#E07B3F" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="0" y1="30" x2="-5" y2="44" stroke="#E07B3F" stroke-width="4" stroke-linecap="round"/>
+            <line x1="0" y1="30" x2="5" y2="44" stroke="#E07B3F" stroke-width="4" stroke-linecap="round"/>
+            <line x1="-8" y1="24" x2="-14" y2="46" stroke="#BF5220" stroke-width="2.5" stroke-linecap="round"/>
+          </g>
+          <!-- Sun -->
+          <circle cx="760" cy="60" r="48" fill="#F9C89A" opacity="0.4"/>
+          <circle cx="760" cy="60" r="32" fill="#F4B896" opacity="0.65"/>
+          <!-- Wildflowers scattered -->
+          <g opacity="0.7">
+            <circle cx="160" cy="295" r="5" fill="#E07B3F"/><line x1="160" y1="300" x2="160" y2="314" stroke="#3D9181" stroke-width="2"/>
+            <circle cx="185" cy="290" r="4" fill="#F4B896"/><line x1="185" y1="294" x2="185" y2="308" stroke="#3D9181" stroke-width="2"/>
+            <circle cx="680" cy="293" r="5" fill="#F9C89A"/><line x1="680" y1="298" x2="680" y2="312" stroke="#3D9181" stroke-width="2"/>
+            <circle cx="705" cy="288" r="4" fill="#E07B3F"/><line x1="705" y1="292" x2="705" y2="306" stroke="#3D9181" stroke-width="2"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── ARTICLE BODY + SIDEBAR ─── -->
+  <div class="article-wrap">
+
+    <!-- Main content -->
+    <article class="article-content">
+
+      <a class="article-back" href="blog.html">← Back to Blog</a>
+
+      <p>You don't need to be an athlete, own special gear, or have a gym membership to get out onto some of the most breathtaking trails in the world. The Pacific Northwest has a quietly kept secret: many of its most stunning landscapes are completely accessible to beginners, casual walkers, and anyone who simply wants to be outside.</p>
+
+      <p>These five trails are handpicked for women who are new to hiking — or just new to hiking <em>here</em>. Each one offers incredible scenery, manageable terrain, and that magical feeling you only get when you realize you've just done something that felt bigger than yourself.</p>
+
+      <div class="pull-quote">
+        <blockquote>"The Pacific Northwest doesn't make you earn its beauty. It just asks you to show up."</blockquote>
+        <cite>— JoAnne Yorkston, Founder of She Goes Outside</cite>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-box-label">✦ Before You Go</div>
+        <p>All five of these hikes are dog-friendly and best done in trail runners or light hiking shoes. Bring more water than you think you need, layer up (the PNW weather is famously unpredictable), and always let someone know where you're headed.</p>
+      </div>
+
+      <!-- Hike 1 -->
+      <div class="hike-entry" id="hike-1">
+        <div class="hike-number">Hike 01</div>
+        <h2>Franklin Falls — <em>Easiest of All</em></h2>
+        <p>Just under an hour from Seattle, this half-mile paved trail ends at one of the most dramatic waterfalls in the Cascades. The roar hits you before you see it. You'll find yourself standing in front of a 70-foot curtain of water feeling genuinely awestruck — and you'll have barely broken a sweat getting there.</p>
+        <p>It's an ideal first hike because there's essentially no way to get lost, it's stroller-accessible, and the payoff is immediate and spectacular.</p>
+        <div class="hike-meta-row">
+          <span class="hike-chip">📍 Snoqualmie Pass</span>
+          <span class="hike-chip">🥾 1 mi round trip</span>
+          <span class="hike-chip">⬆ 80 ft gain</span>
+          <span class="hike-chip">⏱ ~45 mins</span>
+          <span class="hike-chip">🅿 Northwest Forest Pass</span>
+        </div>
+      </div>
+
+      <!-- Hike 2 -->
+      <div class="hike-entry" id="hike-2">
+        <div class="hike-number">Hike 02</div>
+        <h2>Twin Falls — <em>A Gentle Forest Walk</em></h2>
+        <p>This one feels like stepping into a fairy tale. A lush old-growth forest surrounds you from the moment you start walking, and the trail winds along the South Fork Snoqualmie River through mossy boulders and towering cedars before arriving at not one but two magnificent waterfalls.</p>
+        <p>The 2.6-mile loop is well-maintained and not at all technical. It's one of those hikes where you'll stop every five minutes just to look around.</p>
+        <div class="hike-meta-row">
+          <span class="hike-chip">📍 North Bend, WA</span>
+          <span class="hike-chip">🥾 2.6 mi loop</span>
+          <span class="hike-chip">⬆ 500 ft gain</span>
+          <span class="hike-chip">⏱ ~2 hrs</span>
+          <span class="hike-chip">🅿 Discover Pass</span>
+        </div>
+      </div>
+
+      <figure class="article-img">
+        <svg viewBox="0 0 740 280" xmlns="http://www.w3.org/2000/svg">
+          <rect width="740" height="280" fill="#C8E6E0"/>
+          <!-- Forest scene with waterfall -->
+          <rect width="740" height="280" fill="#1A5C4E"/>
+          <rect width="740" height="160" fill="#B5D8F5" opacity="0.45"/>
+          <!-- Tree trunks -->
+          <g fill="#0F3A2E">
+            <rect x="30" y="60" width="18" height="220"/><rect x="90" y="40" width="22" height="240"/><rect x="160" y="70" width="16" height="210"/><rect x="220" y="50" width="20" height="230"/><rect x="560" y="55" width="20" height="225"/><rect x="620" y="42" width="22" height="238"/><rect x="680" y="68" width="16" height="212"/><rect x="720" y="50" width="20" height="230"/>
+          </g>
+          <!-- Tree canopies -->
+          <g fill="#134A3D">
+            <ellipse cx="39" cy="55" rx="38" ry="28"/><ellipse cx="101" cy="36" rx="42" ry="30"/><ellipse cx="168" cy="65" rx="34" ry="26"/><ellipse cx="230" cy="46" rx="40" ry="28"/>
+            <ellipse cx="570" cy="50" rx="40" ry="28"/><ellipse cx="631" cy="38" rx="44" ry="30"/><ellipse cx="688" cy="64" rx="34" ry="26"/><ellipse cx="730" cy="46" rx="38" ry="28"/>
+          </g>
+          <!-- River -->
+          <path d="M300 280 Q320 240 340 200 Q360 160 370 120 Q375 100 380 80" stroke="#4A9E8E" stroke-width="28" fill="none" stroke-linecap="round"/>
+          <path d="M300 280 Q320 240 340 200 Q360 160 370 120 Q375 100 380 80" stroke="#7ABFB4" stroke-width="16" fill="none" stroke-linecap="round" opacity="0.7"/>
+          <path d="M300 280 Q320 240 340 200 Q360 160 370 120 Q375 100 380 80" stroke="white" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.5"/>
+          <!-- Waterfall -->
+          <rect x="360" y="0" width="40" height="85" rx="4" fill="#7ABFB4" opacity="0.8"/>
+          <rect x="368" y="0" width="10" height="85" fill="white" opacity="0.4"/>
+          <rect x="382" y="0" width="6" height="85" fill="white" opacity="0.3"/>
+          <!-- Mist -->
+          <ellipse cx="380" cy="88" rx="50" ry="18" fill="white" opacity="0.3"/>
+          <!-- Moss / ferns -->
+          <g fill="#236B5C" opacity="0.8">
+            <ellipse cx="260" cy="240" rx="30" ry="12"/><ellipse cx="430" cy="250" rx="28" ry="10"/><ellipse cx="500" cy="235" rx="25" ry="10"/><ellipse cx="140" cy="255" rx="22" ry="9"/>
+          </g>
+        </svg>
+        <figcaption>Twin Falls on the South Fork Snoqualmie River — one of the most photogenic spots in the PNW, and less than an hour from Seattle.</figcaption>
+      </figure>
+
+      <!-- Hike 3 -->
+      <div class="hike-entry" id="hike-3">
+        <div class="hike-number">Hike 03</div>
+        <h2>Discovery Park Loop — <em>Right in the City</em></h2>
+        <p>You're in Seattle. You have two hours. You don't need a car. Discovery Park's 2.8-mile loop trail wanders through meadows, forest, and bluffs overlooking Puget Sound, with views of the Olympic Mountains on clear days. It's remarkable that this much wildness exists inside a major city.</p>
+        <p>The loop passes the West Point Lighthouse and offers multiple spots to just sit, breathe, and stare out at the water. Highly recommended at golden hour.</p>
+        <div class="hike-meta-row">
+          <span class="hike-chip">📍 Seattle, WA</span>
+          <span class="hike-chip">🥾 2.8 mi loop</span>
+          <span class="hike-chip">⬆ 280 ft gain</span>
+          <span class="hike-chip">⏱ ~1.5 hrs</span>
+          <span class="hike-chip">🅿 Free</span>
+        </div>
+      </div>
+
+      <!-- Hike 4 -->
+      <div class="hike-entry" id="hike-4">
+        <div class="hike-number">Hike 04</div>
+        <h2>Rattlesnake Ledge — <em>The Classic Reward Hike</em></h2>
+        <p>This is the hike that converts people. The 4-mile round trip involves a real climb — about 1,100 feet — but it's steady and well-switchbacked, and the payoff at the top is a sweeping panoramic view of Rattlesnake Lake, the Cedar River Valley, and the Cascades spreading out in every direction.</p>
+        <p>It's the kind of view that makes you feel like you could do anything. Bring snacks and stay a while.</p>
+        <div class="hike-meta-row">
+          <span class="hike-chip">📍 North Bend, WA</span>
+          <span class="hike-chip">🥾 4 mi round trip</span>
+          <span class="hike-chip">⬆ 1,100 ft gain</span>
+          <span class="hike-chip">⏱ ~3 hrs</span>
+          <span class="hike-chip">🅿 Discover Pass</span>
+        </div>
+      </div>
+
+      <!-- Hike 5 -->
+      <div class="hike-entry" id="hike-5">
+        <div class="hike-number">Hike 05</div>
+        <h2>Coal Creek Trail — <em>A Quiet Gem</em></h2>
+        <p>Bellevue's best-kept secret. This 5-mile trail through Bellevue's Coal Creek Natural Area feels remote despite being surrounded by suburbs. Old-growth Douglas firs, a babbling creek, wildflowers in spring, and almost no crowds make this the perfect "I need to decompress" hike.</p>
+        <p>The terrain is gentle with a few moderate sections. It's beautiful in every season and rarely feels busy, even on weekends.</p>
+        <div class="hike-meta-row">
+          <span class="hike-chip">📍 Bellevue, WA</span>
+          <span class="hike-chip">🥾 5 mi out-and-back</span>
+          <span class="hike-chip">⬆ 400 ft gain</span>
+          <span class="hike-chip">⏱ ~2.5 hrs</span>
+          <span class="hike-chip">🅿 Free</span>
+        </div>
+      </div>
+
+      <h2>Ready to <em>Get Out There?</em></h2>
+      <p>Every one of these trails can be done solo, with a friend, or with a group. If you'd love company on the trail, She Goes Outside runs regular group hikes through the Pacific Northwest — all led by JoAnne, all designed to be welcoming to every fitness level.</p>
+      <p>There's no such thing as "not a hiker." There's just someone who hasn't started yet.</p>
+
+      <div class="tip-box">
+        <div class="tip-box-label">🗓 Join Us on the Trail</div>
+        <p>We host guided group hikes regularly throughout the year. Check the <a href="events.html" style="color:var(--forest);font-weight:800;">Events page</a> for upcoming dates — spots fill up fast!</p>
+      </div>
+
+      <!-- Share bar -->
+      <div class="article-share">
+        <span class="article-share-label">Share</span>
+        <a class="share-btn share-btn-ig" href="#" title="Share on Instagram">📸 Instagram</a>
+        <a class="share-btn share-btn-fb" href="#" title="Share on Facebook">👍 Facebook</a>
+        <button class="share-btn share-btn-copy" onclick="copyLink()" id="copy-btn">🔗 Copy Link</button>
+      </div>
+
+      <!-- Author bio -->
+      <div class="author-bio">
+        <div class="author-avatar">🌿</div>
+        <div>
+          <div class="author-bio-name">JoAnne Yorkston</div>
+          <div class="author-bio-title">Founder, She Goes Outside</div>
+          <p>JoAnne started She Goes Outside to create a community where women of all ages and abilities feel genuinely welcome in the outdoors. Based in the Pacific Northwest, she leads hikes, food tours, and adventures across the region. She believes the best version of yourself lives somewhere on a trail.</p>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- ─── SIDEBAR ─── -->
+    <aside class="article-sidebar">
+
+      <!-- Table of contents -->
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">In this article</div>
+        <ul class="toc-list">
+          <li><a href="#hike-1"><span class="toc-num">01</span> Franklin Falls</a></li>
+          <li><a href="#hike-2"><span class="toc-num">02</span> Twin Falls</a></li>
+          <li><a href="#hike-3"><span class="toc-num">03</span> Discovery Park Loop</a></li>
+          <li><a href="#hike-4"><span class="toc-num">04</span> Rattlesnake Ledge</a></li>
+          <li><a href="#hike-5"><span class="toc-num">05</span> Coal Creek Trail</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="sidebar-card sidebar-newsletter">
+        <div class="sidebar-card-title">Never miss an adventure</div>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6;">New trail guides and trip recaps, straight to your inbox.</p>
+        <form action="https://shegoesoutside.us7.list-manage.com/subscribe/post?u=53dd364eebef9bcb077e119a5&id=f7981cda91&f_id=007b98e0f0" method="POST" novalidate target="_blank">
+          <div style="position:absolute;left:-5000px;" aria-hidden="true">
+            <input type="text" name="b_53dd364eebef9bcb077e119a5_f7981cda91" tabindex="-1" value="">
+          </div>
+          <input type="email" name="EMAIL" placeholder="your@email.com" autocomplete="email" required/>
+          <button type="submit" class="btn btn-primary">✦ Subscribe</button>
+        </form>
+        <p>No spam. Unsubscribe any time.</p>
+      </div>
+
+      <!-- Related posts -->
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">More to read</div>
+        <a class="related-post" href="#">
+          <div class="related-post-thumb">
+            <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+              <rect width="56" height="56" fill="#FEF3EA"/>
+              <path d="M0 35 L14 18 L28 28 L42 12 L56 20 L56 56 L0 56Z" fill="#2A7264"/>
+            </svg>
+          </div>
+          <div>
+            <div class="related-post-title">What to Pack for a PNW Day Hike</div>
+            <div class="related-post-date">February 2, 2026</div>
+          </div>
+        </a>
+        <a class="related-post" href="#">
+          <div class="related-post-thumb">
+            <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+              <rect width="56" height="56" fill="#E8F6F3"/>
+              <path d="M0 30 Q14 22 28 26 Q42 30 56 24 L56 56 L0 56Z" fill="#3D9181"/>
+            </svg>
+          </div>
+          <div>
+            <div class="related-post-title">Best PNW Hikes for Every Season</div>
+            <div class="related-post-date">January 20, 2026</div>
+          </div>
+        </a>
+        <a class="related-post" href="#">
+          <div class="related-post-thumb">
+            <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+              <rect width="56" height="56" fill="#DDEEE9"/>
+              <circle cx="28" cy="22" r="12" fill="#E07B3F" opacity="0.8"/>
+              <rect x="25" y="30" width="6" height="14" fill="#7A3A10"/>
+              <rect x="0" y="40" width="56" height="16" fill="#2A7264"/>
+            </svg>
+          </div>
+          <div>
+            <div class="related-post-title">Why I Started a Women's Outdoor Community at 52</div>
+            <div class="related-post-date">February 18, 2026</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Upcoming event CTA -->
+      <div class="sidebar-card" style="background:linear-gradient(135deg,var(--forest),var(--pine));border-color:transparent;">
+        <div class="sidebar-card-title" style="color:var(--peach);">Upcoming Event</div>
+        <p style="font-size:14px;color:rgba(254,243,234,0.85);line-height:1.6;margin-bottom:18px;">
+          <strong style="color:white;display:block;margin-bottom:4px;">Snow Lake Morning Hike</strong>
+          May 10, 2026 · Snoqualmie Pass
+        </p>
+        <a href="events.html" class="btn btn-outline" style="font-size:12px;padding:10px 20px;">View Events →</a>
+      </div>
+
+    </aside>
+  </div><!-- /article-wrap -->
+
+</div><!-- /page-body -->
+
+<!-- ─── RELATED ARTICLES ─── -->
+<div class="related-section">
+  <div class="related-section-inner">
+    <div class="section-eyebrow">Keep Reading</div>
+    <h2>More <em>Adventures</em> to Explore</h2>
+    <div class="related-grid">
+
+      <div class="blog-card">
+        <div class="blog-img">
+          <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="220" fill="#FEF3EA"/>
+            <rect x="0" y="140" width="400" height="80" fill="#F4B896" opacity="0.5"/>
+            <g fill="#E07B3F"><circle cx="60" cy="135" r="10"/><rect x="56" y="138" width="8" height="22" rx="2" fill="#3D9181"/></g>
+            <g fill="#F4B896"><circle cx="105" cy="128" r="10"/><rect x="101" y="131" width="8" height="24" rx="2" fill="#3D9181"/></g>
+            <g fill="#BF5220"><circle cx="150" cy="133" r="9"/><rect x="146" y="136" width="8" height="22" rx="2" fill="#3D9181"/></g>
+            <g fill="#E07B3F"><circle cx="195" cy="129" r="10"/><rect x="191" y="132" width="8" height="23" rx="2" fill="#3D9181"/></g>
+            <g fill="#F9C89A"><circle cx="240" cy="135" r="9"/><rect x="236" y="138" width="8" height="20" rx="2" fill="#3D9181"/></g>
+            <g fill="#E07B3F"><circle cx="285" cy="128" r="10"/><rect x="281" y="131" width="8" height="24" rx="2" fill="#3D9181"/></g>
+            <rect width="400" height="112" fill="#D4EEF9" opacity="0.6"/>
+          </svg>
+          <div class="blog-tag">Trip Recap</div>
+        </div>
+        <div class="blog-body">
+          <div class="blog-date">March 5, 2026</div>
+          <div class="blog-title">Our First Tulip Festival: What to Expect</div>
+          <div class="blog-excerpt">Rows of orange, red, pink, and purple as far as the eye can see. Here's everything you need to know before visiting Skagit Valley.</div>
+          <div class="blog-author">
+            <div class="blog-avatar">🌷</div>
+            <div class="blog-author-name">JoAnne Yorkston</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-img">
+          <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="220" fill="#C8E6E0"/>
+            <rect x="0" y="120" width="400" height="100" fill="#4A9E8E"/>
+            <path d="M0 132 Q50 124 100 132 Q150 140 200 132 Q250 124 300 132 Q350 140 400 132 L400 220 L0 220Z" fill="#3D9181" opacity="0.7"/>
+            <ellipse cx="130" cy="126" rx="42" ry="10" fill="#E07B3F"/>
+            <ellipse cx="270" cy="132" rx="38" ry="10" fill="#F4B896"/>
+            <rect width="400" height="112" fill="#B5D8F5" opacity="0.55"/>
+          </svg>
+          <div class="blog-tag">Gear &amp; Tips</div>
+        </div>
+        <div class="blog-body">
+          <div class="blog-date">February 2, 2026</div>
+          <div class="blog-title">What to Pack for a PNW Day Hike (No Overpacking!)</div>
+          <div class="blog-excerpt">A practical, no-fuss packing list for women who want to be prepared — without hauling a 30-pound pack on a 2-mile trail.</div>
+          <div class="blog-author">
+            <div class="blog-avatar">🎒</div>
+            <div class="blog-author-name">JoAnne Yorkston</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-img">
+          <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="220" fill="#E8F6F3"/>
+            <rect x="0" y="130" width="400" height="90" fill="#3D9181"/>
+            <path d="M0 150 Q100 132 200 145 Q300 156 400 140 L400 220 L0 220Z" fill="#2A7264"/>
+            <g fill="#1A3D36">
+              <circle cx="120" cy="118" r="12"/>
+              <path d="M120 130 L116 155" stroke="#1A3D36" stroke-width="7" stroke-linecap="round"/>
+              <circle cx="280" cy="118" r="12"/>
+              <path d="M280 130 L276 155" stroke="#1A3D36" stroke-width="7" stroke-linecap="round"/>
+            </g>
+            <rect width="400" height="100" fill="#D4EEF9" opacity="0.45"/>
+          </svg>
+          <div class="blog-tag">Community</div>
+        </div>
+        <div class="blog-body">
+          <div class="blog-date">February 18, 2026</div>
+          <div class="blog-title">Why I Started a Women's Outdoor Community at 52</div>
+          <div class="blog-excerpt">It started with a hike I almost didn't go on. JoAnne shares the story behind She Goes Outside — and why it matters more than she ever imagined.</div>
+          <div class="blog-author">
+            <div class="blog-avatar">🌿</div>
+            <div class="blog-author-name">JoAnne Yorkston</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo"><span class="she">She</span><span class="rest"> Goes Outside</span></span>
+      <p>Adventures for women who love exploring, good food, fresh air, and great company. Based in the Pacific Northwest and beyond.</p>
+      <div class="social-links">
+        <a class="social-link" href="#" title="Instagram">📸</a>
+        <a class="social-link" href="#" title="Facebook">👍</a>
+        <a class="social-link" href="#" title="TikTok">🎵</a>
+        <a class="social-link" href="#" title="Pinterest">📌</a>
+        <a class="social-link" href="#" title="LinkedIn">💼</a>
+        <a class="social-link" href="#" title="YouTube">▶️</a>
+      </div>
+    </div>
+    <div class="footer-col"><h5>Explore</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">Our Story</a></li><li><a href="events.html">Upcoming Events</a></li><li><a href="calendar.html">Calendar</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+    <div class="footer-col"><h5>Connect</h5><ul><li><a href="faq.html">FAQs</a></li><li><a href="contact.html">Contact JoAnne</a></li><li><a href="#">Newsletter</a></li></ul></div>
+    <div class="footer-col"><h5>Adventures</h5><ul><li><a href="events.html">Hiking Events</a></li><li><a href="events.html">Biking Events</a></li><li><a href="events.html">Water Activities</a></li><li><a href="events.html">Food &amp; Tea Trips</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 She Goes Outside. All rights reserved. Founded by JoAnne Yorkston.</span>
+    <span class="tagline">✦ &nbsp; Get Out There! &nbsp; ✦</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Reading progress bar
+  window.addEventListener('scroll', function() {
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled  = (window.scrollY / docHeight) * 100;
+    document.getElementById('progress-bar').style.width = scrolled + '%';
+  });
+
+  // Copy link button
+  function copyLink() {
+    navigator.clipboard.writeText(window.location.href).then(function() {
+      const btn = document.getElementById('copy-btn');
+      btn.textContent = '✓ Copied!';
+      btn.style.background = 'var(--forest)';
+      setTimeout(function() {
+        btn.textContent = '🔗 Copy Link';
+        btn.style.background = '';
+      }, 2000);
+    });
+  }
+</script>
+</body>
+</html>
