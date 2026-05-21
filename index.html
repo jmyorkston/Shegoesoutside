@@ -7,6 +7,27 @@
   <meta name="description" content="Adventures for women who love exploring, good food, fresh air, and great company. Based in the Pacific Northwest."/>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/styles.css"/>
+  <script>
+    (function(w, d, t, h, s, n) {
+      w.FlodeskObject = n;
+      var fn = function() {
+        (w[n].q = w[n].q || []).push(arguments);
+      };
+      w[n] = w[n] || fn;
+      var f = d.getElementsByTagName(t)[0];
+      var v = '?v=' + Math.floor(new Date().getTime() / (120 * 1000)) * 60;
+      var sm = d.createElement(t);
+      sm.async = true;
+      sm.type = 'module';
+      sm.src = h + s + '.mjs' + v;
+      f.parentNode.insertBefore(sm, f);
+      var sn = d.createElement(t);
+      sn.async = true;
+      sn.noModule = true;
+      sn.src = h + s + '.js' + v;
+      f.parentNode.insertBefore(sn, f);
+    })(window, document, 'script', 'https://assets.flodesk.com', '/universal', 'fd');
+  </script>
 </head>
 <body>
 
@@ -260,10 +281,13 @@
   <div class="newsletter-banner">
     <h3>Stay in the <em>loop</em></h3>
     <p>New adventures added all the time. Be the first to know — and the first to sign up.</p>
-    <div class="newsletter-form">
-      <input type="email" placeholder="your@email.com"/>
-      <button class="btn">✦ Subscribe</button>
-    </div>
+    <div id="fd-form-6a0ea01a6836df1c65f535c8"></div>
+    <script>
+      window.fd('form', {
+        formId: '6a0ea01a6836df1c65f535c8',
+        containerEl: '#fd-form-6a0ea01a6836df1c65f535c8'
+      });
+    </script>
   </div>
 
 </div><!-- /page-body -->
