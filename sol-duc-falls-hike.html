@@ -298,7 +298,8 @@
 
     /* Sidebar newsletter */
     .sidebar-newsletter input[type="email"],
-    .sidebar-newsletter input[type="text"] {
+    .sidebar-newsletter input[type="text"],
+    .sidebar-newsletter input[type="tel"] {
       width: 100%;
       padding: 12px 16px;
       border: 1.5px solid rgba(42,114,100,0.2);
@@ -311,7 +312,8 @@
       transition: border-color 0.2s;
     }
     .sidebar-newsletter input[type="email"]:focus,
-    .sidebar-newsletter input[type="text"]:focus { border-color: var(--teal); }
+    .sidebar-newsletter input[type="text"]:focus,
+    .sidebar-newsletter input[type="tel"]:focus { border-color: var(--teal); }
     .sidebar-newsletter input::placeholder { color: var(--muted); }
     .sidebar-newsletter .btn { width: 100%; text-align: center; display: block; padding: 12px; font-size: 13px; }
     .sidebar-newsletter p { font-size: 11px; color: var(--muted); margin-top: 10px; }
@@ -541,6 +543,7 @@
           <input type="text" name="FNAME" placeholder="First name" autocomplete="given-name" required/>
           <input type="text" name="LNAME" placeholder="Last name" autocomplete="family-name" required/>
           <input type="email" name="EMAIL" placeholder="your@email.com" autocomplete="email" required/>
+          <input type="tel" name="PHONE" placeholder="Phone (optional)" autocomplete="tel"/>
           <button type="submit" class="btn btn-primary">✦ Subscribe</button>
         </form>
         <p>No spam. Unsubscribe any time.</p>
