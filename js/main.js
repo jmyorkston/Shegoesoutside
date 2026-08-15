@@ -58,26 +58,21 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ─── NEWSLETTER FORM ─── */
   document.querySelectorAll('.newsletter-form').forEach(function (form) {
     const btn = form.querySelector('.btn');
-    const input = form.querySelector('input[type="email"]');
-    if (btn && input) {
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        if (input.value && input.value.includes('@')) {
-          btn.textContent = '✓ You\'re in!';
-          btn.style.background = '#2A7264';
-          btn.style.color = 'white';
-          input.value = '';
-          setTimeout(function () {
-            btn.textContent = '✦ Subscribe';
-            btn.style.background = 'white';
-            btn.style.color = '#E07B3F';
-          }, 3000);
-        } else {
-          input.style.borderColor = '#E07B3F';
-          setTimeout(function () { input.style.borderColor = ''; }, 2000);
-        }
-      });
-    }
+    if (!btn) return;
+    const originalText = btn.textContent;
+    // Form submits for real (to Mailchimp, in a background tab via target="_blank");
+    // this just gives inline visual confirmation on the page itself.
+    form.addEventListener('submit', function () {
+      btn.textContent = '✓ You\'re in!';
+      btn.style.background = '#2A7264';
+      btn.style.color = 'white';
+      setTimeout(function () {
+        form.reset();
+        btn.textContent = originalText;
+        btn.style.background = '';
+        btn.style.color = '';
+      }, 3000);
+    });
   });
 
   /* ─── CONTACT FORM ─── */
