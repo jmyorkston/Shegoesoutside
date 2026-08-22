@@ -12,6 +12,7 @@
     .mh-cal-day.disabled:hover { background: white; border-color: rgba(224,123,63,0.08); }
     .cal-day.mh-cal-day.selected { background: var(--trek); color: white; border-color: var(--trek); }
     .cal-day.mh-cal-day.selected::after { background: white; }
+    .cal-day.mh-cal-day.special::after { background: var(--teal); }
 
     .mh-hint { text-align: center; color: var(--muted); font-size: 13px; margin-top: 24px; }
 
@@ -84,7 +85,7 @@
       </div>
     </div>
     <div class="cal-grid" id="mh-cal-grid"><!-- filled by JS --></div>
-    <p class="mh-hint">Highlighted Thursdays are open for booking. Exact trailhead location shared upon registration.</p>
+    <p class="mh-hint">Highlighted Thursdays are open for the weekly meetup. Teal-dotted dates are special one-time hikes — click to learn more.</p>
 
     <div id="mh-detail" class="mh-detail">
       <div class="mh-detail-img">
@@ -157,6 +158,13 @@
     // },
   };
 
+  /* ── Special one-time events ──
+     Non-Thursday event dates that link straight to their own page instead
+     of showing the hike/mocktail panel. Add more as one-off hikes come up. */
+  var MH_SPECIAL = {
+    '2026-8-29': { link: 'sol-duc-falls-hike.html' }
+  };
+
   var MH_DEFAULT = {
     hikeName: 'Trail to be announced',
     hikeLocation: 'Location varies',
@@ -208,22 +216,31 @@
     for (var d = 1; d <= totalDays; d++) {
       var date = new Date(mhYear, mhMonth, d);
       var key = mhYear + '-' + (mhMonth + 1) + '-' + d;
-      var isOpen = date.getDay() === 4 && mhIsWithinWindow(date, today);
+      var special = MH_SPECIAL[key];
+      var isOpen = (date.getDay() === 4 && mhIsWithinWindow(date, today)) || !!special;
       var isToday = today.getFullYear() === mhYear && today.getMonth() === mhMonth && today.getDate() === d;
 
       var classes = 'cal-day mh-cal-day';
       if (isToday) classes += ' today';
       if (isOpen) classes += ' has-event'; else classes += ' disabled';
+      if (special) classes += ' special';
       if (key === mhSelectedKey) classes += ' selected';
 
-      html += '<div class="' + classes + '" data-key="' + key + '" data-open="' + isOpen + '">' + d + '</div>';
+      html += '<div class="' + classes + '" data-key="' + key + '"' +
+        (special ? ' data-special="' + special.link + '"' : '') +
+        ' data-open="' + isOpen + '">' + d + '</div>';
     }
     grid.innerHTML = html;
 
     grid.querySelectorAll('.mh-cal-day').forEach(function (el) {
-      if (el.dataset.open === 'true') {
-        el.addEventListener('click', function () { selectMhDate(mhParseKey(this.dataset.key)); });
-      }
+      if (el.dataset.open !== 'true') return;
+      el.addEventListener('click', function () {
+        if (this.dataset.special) {
+          window.location.href = this.dataset.special;
+        } else {
+          selectMhDate(mhParseKey(this.dataset.key));
+        }
+      });
     });
   }
 
