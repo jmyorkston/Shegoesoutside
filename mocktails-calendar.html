@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mocktails &amp; a Hike Calendar — She Goes Outside</title>
+  <meta name="description" content="Pick a Thursday and see that week's hike and mocktail for She Goes Outside's weekly Mocktails & a Hike meetup."/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <style>
+    .mh-cal-day.disabled { cursor: default; opacity: 0.35; }
+    .mh-cal-day.disabled:hover { background: white; border-color: rgba(224,123,63,0.08); }
+    .cal-day.mh-cal-day.selected { background: var(--trek); color: white; border-color: var(--trek); }
+    .cal-day.mh-cal-day.selected::after { background: white; }
+
+    .mh-hint { text-align: center; color: var(--muted); font-size: 13px; margin-top: 24px; }
+
+    .mh-detail {
+      max-width: 900px; margin: 40px auto 0; background: white;
+      border-radius: 20px; overflow: hidden;
+      box-shadow: 0 4px 20px rgba(26,61,54,0.08);
+      border: 1px solid rgba(74,158,142,0.1);
+      display: grid; grid-template-columns: 260px 1fr;
+    }
+    .mh-detail-img { position: relative; }
+    .mh-detail-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .mh-detail-badge {
+      position: absolute; top: 16px; left: 16px;
+      background: var(--trek); color: white;
+      font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 50px;
+    }
+    .mh-detail-body { padding: 32px; }
+    .mh-detail-date { font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+    .mh-detail-section-label {
+      font-size: 11px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--muted); margin: 20px 0 6px;
+    }
+    .mh-detail-section-label:first-of-type { margin-top: 0; }
+    .mh-detail-body h3 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 24px; color: var(--pine); margin-bottom: 6px; }
+    .mh-detail-body p { font-size: 14px; line-height: 1.7; color: var(--muted); }
+    .mh-detail-meta { display: flex; gap: 16px; margin: 8px 0 10px; font-size: 12px; color: var(--muted); font-weight: 700; flex-wrap: wrap; }
+
+    @media (max-width: 700px) {
+      .mh-detail { grid-template-columns: 1fr; }
+      .mh-detail-img { height: 200px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a class="nav-logo" href="index.html">
+    <div class="nav-logo-text"><span class="she">She</span><span class="rest"> Goes Outside</span></div>
+  </a>
+  <button class="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="events.html" class="active">Events</a></li>
+    <li><a href="calendar.html">Calendar</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="events.html" class="btn nav-cta">Get Out There!</a></li>
+  </ul>
+</nav>
+
+<div class="page-body">
+
+  <div class="page-hero">
+    <div class="section-eyebrow">Every Thursday</div>
+    <h1 class="section-title">Mocktails <em>&amp; a Hike</em></h1>
+    <p>Pick a Thursday below to see that week's trail and mocktail pairing. New details added weekly — check back often!</p>
+  </div>
+
+  <div class="calendar-wrap">
+    <div class="cal-header">
+      <h3 id="mh-cal-month-label">Month Year</h3>
+      <div class="cal-nav">
+        <button id="mh-cal-prev" aria-label="Previous month">&#8249;</button>
+        <button id="mh-cal-next" aria-label="Next month">&#8250;</button>
+      </div>
+    </div>
+    <div class="cal-grid" id="mh-cal-grid"><!-- filled by JS --></div>
+    <p class="mh-hint">Highlighted Thursdays are open for booking. Exact trailhead location shared upon registration.</p>
+
+    <div id="mh-detail" class="mh-detail">
+      <div class="mh-detail-img">
+        <img id="mh-detail-photo" src="assets/images/mocktails-hike.jpg" alt="A refreshing mocktail enjoyed outdoors with mountain views"/>
+        <div class="mh-detail-badge">Social 🍹</div>
+      </div>
+      <div class="mh-detail-body">
+        <div class="mh-detail-date" id="mh-detail-date">Thursday, Month Day</div>
+
+        <div class="mh-detail-section-label">This Week's Hike</div>
+        <h3 id="mh-detail-hike-name">Trail TBD</h3>
+        <div class="mh-detail-meta" id="mh-detail-hike-meta"></div>
+        <p id="mh-detail-hike-desc"></p>
+
+        <div class="mh-detail-section-label">This Week's Mocktail</div>
+        <h3 id="mh-detail-mocktail-name">Seasonal Mocktail</h3>
+        <p id="mh-detail-mocktail-desc"></p>
+
+        <div style="margin-top:22px;">
+          <a class="btn btn-primary" href="contact.html">Register →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-40">
+      <a class="btn btn-primary" href="events.html">← Back to All Events</a>
+    </div>
+  </div>
+
+</div><!-- /page-body -->
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo"><span class="she">She</span><span class="rest"> Goes Outside</span></span>
+      <p>Adventures for women who love exploring, good food, fresh air, and great company. Based in the Pacific Northwest and beyond.</p>
+      <div class="social-links">
+        <a class="social-link" href="https://www.instagram.com/she.goes.outside.pnw" title="Instagram" aria-label="Instagram" target="_blank" rel="noopener">📸</a>
+        <a class="social-link" href="https://www.facebook.com/profile.php?id=61592298425720" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">👍</a>
+        <a class="social-link" href="#" title="TikTok" aria-label="TikTok">🎵</a>
+        <a class="social-link" href="#" title="Pinterest" aria-label="Pinterest">📌</a>
+        <a class="social-link" href="#" title="LinkedIn" aria-label="LinkedIn">💼</a>
+        <a class="social-link" href="#" title="YouTube" aria-label="YouTube">▶️</a>
+      </div>
+    </div>
+    <div class="footer-col"><h5>Explore</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">Our Story</a></li><li><a href="events.html">Upcoming Events</a></li><li><a href="calendar.html">Calendar</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+    <div class="footer-col"><h5>Connect</h5><ul><li><a href="faq.html">FAQs</a></li><li><a href="contact.html">Contact JoAnne</a></li><li><a href="#">Newsletter</a></li></ul></div>
+    <div class="footer-col"><h5>Adventures</h5><ul><li><a href="events.html">Hiking Events</a></li><li><a href="events.html">Biking Events</a></li><li><a href="events.html">Water Activities</a></li><li><a href="events.html">Food &amp; Coffee Trips</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 She Goes Outside. All rights reserved. Founded by JoAnne Yorkston.</span>
+    <span class="tagline">✦ &nbsp; Get Out There! &nbsp; ✦</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  /* ── Mocktails & a Hike weekly data ──
+     Add or edit entries here as specific hikes + mocktails get planned.
+     Key format: 'YYYY-M-D' (month is 1-indexed, day is not zero-padded).
+     Any Thursday without an entry below falls back to MH_DEFAULT. */
+  var MH_WEEKS = {
+    // '2026-8-27': {
+    //   hikeName: 'Discovery Park Loop', hikeLocation: 'Discovery Park, Seattle',
+    //   hikeDistance: '2 mi', hikeDifficulty: 'Easy',
+    //   hikeDesc: 'A gentle loop through forest and bluff with sunset views over the Sound.',
+    //   mocktailName: 'Blueberry Basil Fizz',
+    //   mocktailDesc: 'Muddled blueberries, fresh basil, and soda over ice.'
+    // },
+  };
+
+  var MH_DEFAULT = {
+    hikeName: 'Trail to be announced',
+    hikeLocation: 'Location varies',
+    hikeDistance: '1–2 mi',
+    hikeDifficulty: 'Easy',
+    hikeDesc: 'Details for this week\'s hike are still being finalized — check back soon or reach out to JoAnne.',
+    mocktailName: 'Seasonal Mocktail',
+    mocktailDesc: 'A refreshing seasonal mocktail, served at the trailhead after the hike.'
+  };
+
+  var MH_WINDOW_DAYS = 56; // rolling ~8 weeks
+  var mhMonth, mhYear, mhSelectedKey = null;
+
+  function mhStripTime(d) { return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
+
+  function mhIsWithinWindow(date, today) {
+    var diffDays = Math.floor((mhStripTime(date) - mhStripTime(today)) / 86400000);
+    return diffDays >= 0 && diffDays <= MH_WINDOW_DAYS;
+  }
+
+  function mhNextOpenThursday(from) {
+    var d = mhStripTime(from);
+    for (var i = 0; i < MH_WINDOW_DAYS + 7; i++) {
+      if (d.getDay() === 4 && mhIsWithinWindow(d, from)) return d;
+      d.setDate(d.getDate() + 1);
+    }
+    return null;
+  }
+
+  function mhParseKey(key) {
+    var parts = key.split('-');
+    return new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+  }
+
+  function renderMhCalendar() {
+    var monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    document.getElementById('mh-cal-month-label').textContent = monthNames[mhMonth] + ' ' + mhYear;
+
+    var grid = document.getElementById('mh-cal-grid');
+    var dayLabels = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    var html = dayLabels.map(function (d) { return '<div class="cal-day-label">' + d + '</div>'; }).join('');
+
+    var firstDay = new Date(mhYear, mhMonth, 1).getDay();
+    var totalDays = new Date(mhYear, mhMonth + 1, 0).getDate();
+    var today = new Date();
+
+    for (var i = 0; i < firstDay; i++) html += '<div class="cal-day empty"></div>';
+
+    for (var d = 1; d <= totalDays; d++) {
+      var date = new Date(mhYear, mhMonth, d);
+      var key = mhYear + '-' + (mhMonth + 1) + '-' + d;
+      var isOpen = date.getDay() === 4 && mhIsWithinWindow(date, today);
+      var isToday = today.getFullYear() === mhYear && today.getMonth() === mhMonth && today.getDate() === d;
+
+      var classes = 'cal-day mh-cal-day';
+      if (isToday) classes += ' today';
+      if (isOpen) classes += ' has-event'; else classes += ' disabled';
+      if (key === mhSelectedKey) classes += ' selected';
+
+      html += '<div class="' + classes + '" data-key="' + key + '" data-open="' + isOpen + '">' + d + '</div>';
+    }
+    grid.innerHTML = html;
+
+    grid.querySelectorAll('.mh-cal-day').forEach(function (el) {
+      if (el.dataset.open === 'true') {
+        el.addEventListener('click', function () { selectMhDate(mhParseKey(this.dataset.key)); });
+      }
+    });
+  }
+
+  function selectMhDate(date) {
+    mhSelectedKey = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+    var data = MH_WEEKS[mhSelectedKey] || MH_DEFAULT;
+
+    var dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    var monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    document.getElementById('mh-detail-date').textContent =
+      dayNames[date.getDay()] + ', ' + monthNames[date.getMonth()] + ' ' + date.getDate();
+
+    document.getElementById('mh-detail-hike-name').textContent = data.hikeName;
+    document.getElementById('mh-detail-hike-desc').textContent = data.hikeDesc;
+    document.getElementById('mh-detail-hike-meta').innerHTML =
+      '<span>📍 ' + data.hikeLocation + '</span><span>🚶 ' + data.hikeDistance + '</span><span>🌤 ' + data.hikeDifficulty + '</span>';
+    document.getElementById('mh-detail-mocktail-name').textContent = data.mocktailName;
+    document.getElementById('mh-detail-mocktail-desc').textContent = data.mocktailDesc;
+
+    renderMhCalendar();
+  }
+
+  (function initMhCalendar() {
+    var today = new Date();
+    mhMonth = today.getMonth();
+    mhYear = today.getFullYear();
+
+    document.getElementById('mh-cal-prev').addEventListener('click', function () {
+      mhMonth--; if (mhMonth < 0) { mhMonth = 11; mhYear--; }
+      renderMhCalendar();
+    });
+    document.getElementById('mh-cal-next').addEventListener('click', function () {
+      mhMonth++; if (mhMonth > 11) { mhMonth = 0; mhYear++; }
+      renderMhCalendar();
+    });
+
+    renderMhCalendar();
+
+    var next = mhNextOpenThursday(today);
+    if (next) selectMhDate(next);
+  })();
+</script>
+</body>
+</html>
