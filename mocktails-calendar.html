@@ -207,7 +207,8 @@
       hikeDistance: '1–2 mi', hikeDifficulty: 'Easy',
       hikeDesc: 'A calm walk along the creek right in Poulsbo, easy to reach and easy on the legs.',
       mocktailName: 'Evergreen Mule',
-      mocktailDesc: 'A crisp, gingery mocktail with a fresh evergreen twist.'
+      mocktailDesc: 'A crisp, gingery mocktail with a fresh evergreen twist.',
+      registerUrl: 'https://www.eventbrite.com/e/mocktails-hikes-fish-park-tickets-2001708651461'
     },
     '2026-10-1': {
       hikeName: 'Port Gamble Heritage Park Trails',
@@ -354,12 +355,13 @@
       .sort(function (a, b) { return a.date - b.date; });
 
     container.innerHTML = entries.map(function (e) {
+      var registerUrl = e.data.registerUrl || 'https://mailchi.mp/shegoesoutside/mocktails-hikes';
       return '<div class="mh-upcoming-card" id="mh-card-' + e.key + '">' +
         '<div class="mh-upcoming-card-date">' + mhFormatDate(e.date) + '</div>' +
         '<h4>' + e.data.hikeName + '</h4>' +
         '<div class="mh-upcoming-card-location">📍 ' + e.data.hikeLocation + '</div>' +
         '<div class="mh-upcoming-card-mocktail"><strong>Mocktail:</strong> ' + e.data.mocktailName + '</div>' +
-        '<a class="btn btn-primary" href="https://mailchi.mp/shegoesoutside/mocktails-hikes" target="_blank" rel="noopener">Register →</a>' +
+        '<a class="btn btn-primary" href="' + registerUrl + '" target="_blank" rel="noopener">Register →</a>' +
       '</div>';
     }).join('');
   }
