@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trip Guides — She Goes Outside</title>
+  <meta name="description" content="Self-guided weekend itineraries for women, scouted in person by She Goes Outside. Start with Leavenworth: all the views, real trails, gentle miles."/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <style>
+    .guide-wrap { max-width: 1040px; margin: 0 auto; padding: 60px 24px; }
+    .guide-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(26,61,54,0.10); display: grid; grid-template-columns: 1.1fr 1fr; }
+    .guide-card img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 320px; }
+    .guide-info { padding: 40px 36px; }
+    .guide-tag { font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); }
+    .guide-info h2 { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--forest); margin: 10px 0 8px; line-height: 1.2; }
+    .guide-tagline { font-style: italic; color: var(--trek); font-weight: 700; margin-bottom: 16px; }
+    .guide-info p { color: var(--text); line-height: 1.7; margin-bottom: 16px; }
+    .guide-price { font-size: 30px; font-weight: 900; color: var(--pine); margin: 8px 0 18px; }
+    .guide-price small { font-size: 14px; font-weight: 600; color: var(--muted); }
+    .guide-fine { font-size: 13px; color: var(--muted); margin-top: 12px; }
+    .guide-section { margin-top: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    .guide-section h3 { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--forest); margin-bottom: 12px; }
+    .guide-section ul { list-style: none; padding: 0; }
+    .guide-section li { padding: 8px 0 8px 28px; position: relative; line-height: 1.6; }
+    .guide-section li::before { content: "✦"; position: absolute; left: 0; color: var(--trek); }
+    .guide-section img { width: 100%; border-radius: 16px; display: block; }
+    .guide-days { margin-top: 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .guide-day { background: var(--warm-white); border-radius: 16px; padding: 24px; }
+    .guide-day h4 { color: var(--forest); font-size: 18px; margin-bottom: 8px; }
+    .guide-day p { font-size: 15px; line-height: 1.6; color: var(--text); }
+    .guide-joanne { margin-top: 56px; display: grid; grid-template-columns: 1fr 1.4fr; gap: 32px; align-items: center; background: var(--pine); color: var(--warm-white); border-radius: 20px; overflow: hidden; }
+    .guide-joanne img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 240px; }
+    .guide-joanne div { padding: 32px 32px 32px 0; }
+    .guide-joanne h3 { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--peach); margin-bottom: 10px; }
+    .guide-joanne p { line-height: 1.7; opacity: 0.9; margin-bottom: 12px; }
+    .guide-joanne a { color: var(--peach); }
+    .guide-cta { text-align: center; margin-top: 56px; }
+    @media (max-width: 800px) {
+      .guide-card, .guide-section, .guide-joanne { grid-template-columns: 1fr; }
+      .guide-days { grid-template-columns: 1fr; }
+      .guide-joanne div { padding: 0 24px 28px; }
+      .guide-info { padding: 28px 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a class="nav-logo" href="index.html">
+
+    <div class="nav-logo-text"><span class="she">She</span><span class="rest"> Goes Outside</span></div>
+  </a>
+  <button class="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="guides.html" class="active">Trip Guides</a></li>
+    <li><a href="mocktails-calendar.html">Calendar</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="events.html" class="btn nav-cta">Get Out There!</a></li>
+  </ul>
+</nav>
+
+<div class="page-body">
+
+  <div class="page-hero">
+    <div class="section-eyebrow">Self-Guided Trip Guides</div>
+    <h1 class="section-title" style="margin-bottom:16px;">Your weekend, <em>already planned</em></h1>
+    <p>Ready-to-follow itineraries scouted in person by She Goes Outside. Grab one, text your favorite women, and pick a weekend.</p>
+  </div>
+
+  <div class="guide-wrap">
+
+    <div class="guide-card">
+      <img src="assets/images/guide-leavenworth-lake.jpg" alt="Morning fog lifting off an island on Lake Wenatchee"/>
+      <div class="guide-info">
+        <div class="guide-tag">Leavenworth, WA · 3 days</div>
+        <h2>Leavenworth Weekend: A She Goes Outside Guide</h2>
+        <div class="guide-tagline">All the views. Real trails. Gentle miles.</div>
+        <p>A riverside loop, a lakeshore hike and a canyon walk across an old iron pipeline bridge, plus an outdoor soak at The Springs, brats and broth bowls, and a hidden cocktail bar. Everything in the right order, so you never backtrack.</p>
+        <div class="guide-price">$15 <small>instant PDF download</small></div>
+        <a class="btn btn-primary" href="https://buy.stripe.com/8x214pap10vQ2v4gPD6Ri00" target="_blank" rel="noopener">Get the guide →</a>
+        <div class="guide-fine">Secure checkout by Stripe. Your download link appears right after payment.</div>
+      </div>
+    </div>
+
+    <div class="guide-section">
+      <div>
+        <h3>What you're getting</h3>
+        <ul>
+          <li>An hour-by-hour plan, Friday to Sunday</li>
+          <li>Which parking pass each trailhead needs (one per car, not per person)</li>
+          <li>Four downtown places to stay, plus vacation-rental tips</li>
+          <li>What to book ahead and what you can decide on the fly</li>
+          <li>Rain-day, crowd and early-sunset Plan Bs</li>
+          <li>A booking checklist, every address, website and Instagram link</li>
+          <li>Photos from my own scouting trip</li>
+        </ul>
+      </div>
+      <img src="assets/images/guide-leavenworth-bridge.jpg" alt="Walking the old iron pipeline bridge over the Wenatchee River in fall"/>
+    </div>
+
+    <div class="guide-days">
+      <div class="guide-day">
+        <h4>Friday</h4>
+        <p>Arrive, stretch your legs on the flat Blackbird Island river loop, then brats and a beer at München Haus.</p>
+      </div>
+      <div class="guide-day">
+        <h4>Saturday</h4>
+        <p>J5 coffee, the Northlake Loop at Lake Wenatchee, shopping and a Gingerbread Factory treat, The Springs, dinner on the Yodelin deck, cocktails at Blind Tigress.</p>
+      </div>
+      <div class="guide-day">
+        <h4>Sunday</h4>
+        <p>Crepes, then the Old Pipeline Bed trail through Tumwater Canyon on your way home.</p>
+      </div>
+    </div>
+
+    <div class="guide-joanne">
+      <img src="assets/images/guide-joanne-trail.jpg" alt="JoAnne smiling on the Pipeline trail"/>
+      <div>
+        <h3>Scouted in person by JoAnne</h3>
+        <p>I walked every trail and checked every stop in this guide myself in October 2026, and I check the details each season. About 6.4 gentle miles over the whole weekend. Great for friend trips, mother-daughter weekends, solo resets and midweek getaways.</p>
+        <p>Want us to plan it for your group instead? Email <a href="mailto:joanne@shegoesoutside.com">joanne@shegoesoutside.com</a>.</p>
+      </div>
+    </div>
+
+    <div class="guide-cta">
+      <a class="btn btn-primary" href="https://buy.stripe.com/8x214pap10vQ2v4gPD6Ri00" target="_blank" rel="noopener">Get the Leavenworth guide · $15 →</a>
+      <div class="guide-fine">Tag your trip #shegoesoutsidepnw</div>
+    </div>
+
+  </div>
+
+</div><!-- /page-body -->
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo"><span class="she">She</span><span class="rest"> Goes Outside</span></span>
+      <p>Adventures for women who love exploring, good food, fresh air, and great company. Based in the Pacific Northwest and beyond.</p>
+      <div class="social-links">
+        <a class="social-link" href="https://www.instagram.com/she.goes.outside.pnw" title="Instagram" aria-label="Instagram" target="_blank" rel="noopener">📸</a>
+        <a class="social-link" href="https://www.facebook.com/profile.php?id=61592298425720" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">👍</a>
+        <a class="social-link" href="#" title="TikTok" aria-label="TikTok">🎵</a>
+        <a class="social-link" href="#" title="Pinterest" aria-label="Pinterest">📌</a>
+        <a class="social-link" href="#" title="LinkedIn" aria-label="LinkedIn">💼</a>
+        <a class="social-link" href="#" title="YouTube" aria-label="YouTube">▶️</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Explore</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="events.html">Upcoming Events</a></li>
+        <li><a href="guides.html">Trip Guides</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Connect</h5>
+      <ul>
+        <li><a href="faq.html">FAQs</a></li>
+        <li><a href="contact.html">Contact JoAnne</a></li>
+        <li><a href="#">Newsletter</a></li>
+        <li><a href="https://www.instagram.com/she.goes.outside.pnw" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Adventures</h5>
+      <ul>
+        <li><a href="events.html">Hiking Events</a></li>
+        <li><a href="events.html">Biking Events</a></li>
+        <li><a href="events.html">Water Activities</a></li>
+        <li><a href="events.html">Food &amp; Coffee Trips</a></li>
+        <li><a href="events.html">Seasonal Events</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 She Goes Outside. All rights reserved. Founded by JoAnne Yorkston.</span>
+    <span class="tagline">✦ &nbsp; Get Out There! &nbsp; ✦</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
